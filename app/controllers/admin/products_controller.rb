@@ -29,7 +29,7 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-  def book_params
+  def product_params
     params.require(:product).permit(:genre_id, :name, :image_id, :introduction, :price, :is_active)
   end
 
