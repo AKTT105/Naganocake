@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-11">
+      <table class="table">
+          
+        <tr>  
+    　  <td><%= @user.first_name %> <%= @user.last_name %>の会員詳細</td>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>顧客ID</th>
+    　  <th><%= @user.id %></th>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>氏名</th>
+    　  <th><%= @user.first_name %> <%= @user.last_name %></th>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>フリガナ</th>
+    　  <th><%= @user.last_name_kana %> <%= @user.first_name_kana %></th>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>郵便番号</th>
+    　  <th><%= @user.postal_code %></th>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>住所</th>
+    　  <th><%= @user.address %></th>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>電話番号</th>
+    　  <th><%= @user.phone %></th>
+    　  </tr>
+    　  
+    　  <tr>
+    　  <th>メールアドレス</th>
+    　  <th><%= @user.email %></th>
+    　  </tr>
+    　</table>
+    　
+    　<%= link_to edit_admin_customer_path(@user) do %>
+        <span class="btn btn-info">編集する</span>
+      <% end %>
+      
+      <%= link_to admin_orders_path(id: @user.id) do %>
+      <% end %>
+    </div>
+  </div>
+</div>
