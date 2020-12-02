@@ -8,6 +8,7 @@ class Admin::OrdersController < ApplicationController
       @order = Order.find(params[:id])
       @order_products = OrderProduct.where(order_id: @order)
       @customer = Customer.find_by(id: @order.customer_id)
+      @order.total_payment = @order.total_price+@order.postage
     end
     
     def update
