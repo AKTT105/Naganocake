@@ -440,9 +440,9 @@ Started GET "/" for 207.65.226.63 at 2020-12-01 11:23:13 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
+
 ActionController::RoutingError (uninitialized constant Public):
-  
+
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
@@ -531,14 +531,14 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms)
 
 
-  
+
 SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 ...m_with model: @product, local :true do |f| @output_buffer.sa...
 ...                              ^
 /home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:28: syntax error, unexpected ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 app/views/admin/products/new.html.erb:28: syntax error, unexpected ensure, expecting end-of-input
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:26:37 +0000
@@ -549,14 +549,14 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 ...rm_with model:@product, local :true do |f| @output_buffer.sa...
 ...                              ^
 /home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:18 +0000
@@ -567,14 +567,14 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
 
 
-  
+
 SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 ...rm_with model:@product, local :true do |f| @output_buffer.sa...
 ...                              ^
 /home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:22 +0000
@@ -585,14 +585,14 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
 
 
-  
+
 SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 ...rm_with model:@product, local :true do |f| @output_buffer.sa...
 ...                              ^
 /home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:25 +0000
@@ -603,21 +603,21 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 ...rm_with model:@product, local :true do |f| @output_buffer.sa...
 ...                              ^
 /home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
 Started GET "/" for 207.65.226.63 at 2020-12-01 11:28:30 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+
 ActionController::RoutingError (uninitialized constant Public):
-  
+
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
@@ -686,14 +686,14 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 ...rm_with model:@product, local :true do |f| @output_buffer.sa...
 ...                              ^
 /home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
 app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
 Started GET "/admin/products/:id" for 207.65.226.63 at 2020-12-01 11:35:00 +0000
@@ -705,9 +705,9 @@ Processing by Admin::ProductsController#show as HTML
 Completed 404 Not Found in 14ms (ActiveRecord: 0.8ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=:id):
-  
+
 app/controllers/admin/products_controller.rb:18:in `show'
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:37:33 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
@@ -717,7 +717,7 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f52141b2458>
 Did you mean?  image_id_in_database):
     2: <%= form_with model:@product, local: true do |f| %>
@@ -725,9 +725,9 @@ Did you mean?  image_id_in_database):
     4:     <%= f.label :image_id, "商品名" %>
     5:     <%= f.attachment_field :image_id %>
     6:   </div>
-    7: 
+    7:
     8:   <div class="field">
-  
+
 app/views/admin/products/new.html.erb:5:in `block in _app_views_admin_products_new_html_erb__2118883763675972395_69995251225580'
 app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb__2118883763675972395_69995251225580'
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:38:35 +0000
@@ -738,7 +738,7 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f5208731a48>
 Did you mean?  image_id_in_database):
     2: <%= form_with model:@product, local: true do |f| %>
@@ -746,9 +746,9 @@ Did you mean?  image_id_in_database):
     4:     <%= f.label :image_id, "商品名" %>
     5:     <%= f.attachment_field :image_id %>
     6:   </div>
-    7: 
+    7:
     8:   <div class="field">
-  
+
 app/views/admin/products/new.html.erb:5:in `block in _app_views_admin_products_new_html_erb__2118883763675972395_69995152919520'
 app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb__2118883763675972395_69995152919520'
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:43:57 +0000
@@ -759,16 +759,16 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `map' for nil:NilClass):
-    12: 
+    12:
     13:   <div class="field">
     14:     <%= f.label :genre_id, "ジャンル" %>
     15:     <%= f.collection_select(:genre_id, @genre, :id, :name) %>
     16:   </div>
-    17: 
+    17:
     18:   <div class="field">
-  
+
 app/views/admin/products/new.html.erb:15:in `block in _app_views_admin_products_new_html_erb__2118883763675972395_69995251993820'
 app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb__2118883763675972395_69995251993820'
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:47:01 +0000
@@ -823,9 +823,9 @@ Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.1ms)
 
 Started POST "/products" for 207.65.226.63 at 2020-12-01 11:51:14 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+
 ActionController::RoutingError (No route matches [POST] "/products"):
-  
+
 actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
@@ -855,9 +855,9 @@ puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started POST "/products" for 207.65.226.63 at 2020-12-01 11:52:58 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+
 ActionController::RoutingError (No route matches [POST] "/products"):
-  
+
 actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
@@ -897,9 +897,9 @@ Completed 200 OK in 33ms (Views: 21.8ms | ActiveRecord: 1.0ms)
 
 Started POST "/products" for 207.65.226.63 at 2020-12-01 11:56:05 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+
 ActionController::RoutingError (No route matches [POST] "/products"):
-  
+
 actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
@@ -936,9 +936,9 @@ Processing by Admin::ProductsController#show as HTML
 Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
-  
+
 app/controllers/admin/products_controller.rb:18:in `show'
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
@@ -1133,9 +1133,9 @@ Processing by Admin::ProductsController#show as HTML
 Completed 404 Not Found in 23ms (ActiveRecord: 0.8ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
-  
+
 app/controllers/admin/products_controller.rb:18:in `show'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
@@ -1156,9 +1156,9 @@ Processing by Admin::ProductsController#show as HTML
 Completed 404 Not Found in 14ms (ActiveRecord: 0.7ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
-  
+
 app/controllers/admin/products_controller.rb:18:in `show'
 Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:46:19 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
@@ -1182,9 +1182,9 @@ Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.1ms)
 
 Started POST "/products" for 207.65.226.63 at 2020-12-02 02:46:26 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+
 ActionController::RoutingError (No route matches [POST] "/products"):
-  
+
 actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
@@ -1226,16 +1226,16 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms)
 
 
-  
+
 ActionView::Template::Error (no implicit conversion of String into Integer):
-    16: 
+    16:
     17:   <div class="field">
     18:     <%= f.label :genre_id, "ジャンル" %>
     19:     <%= f.select :genre_id, [["ケーキ", 1]["クッキー", 2]] %>
     20:   </div>
-    21: 
+    21:
     22:   <div class="field">
-  
+
 app/views/admin/products/new.html.erb:19:in `[]'
 app/views/admin/products/new.html.erb:19:in `block in _app_views_admin_products_new_html_erb___634734521338274520_70109841038060'
 app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb___634734521338274520_70109841038060'
@@ -1247,16 +1247,16 @@ Processing by Admin::ProductsController#new as HTML
 Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (no implicit conversion of String into Integer):
-    16: 
+    16:
     17:   <div class="field">
     18:     <%= f.label :genre_id, "ジャンル" %>
     19:     <%= f.select :genre_id, [["ケーキ"]["クッキー"]] %>
     20:   </div>
-    21: 
+    21:
     22:   <div class="field">
-  
+
 app/views/admin/products/new.html.erb:19:in `[]'
 app/views/admin/products/new.html.erb:19:in `block in _app_views_admin_products_new_html_erb___634734521338274520_70109841415360'
 app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb___634734521338274520_70109841415360'
@@ -1280,9 +1280,9 @@ Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.0ms)
 
 Started POST "/products" for 207.65.226.63 at 2020-12-02 02:57:26 +0000
 Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+
 ActionController::RoutingError (No route matches [POST] "/products"):
-  
+
 actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
