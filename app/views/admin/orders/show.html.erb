@@ -1,0 +1,72 @@
+
+
+<div class="container">
+  
+  <div class="row">
+    <h3>注文履歴詳細</h3>
+  </div>
+  
+  <div class="row">
+    <h4>購入者</h4>
+    <%= link_to admin_customers_path do %>
+      <%= @customer.last_name %> <%= @customer.first_name %>
+    <% end %>
+    
+    <h4>配送先</h4>
+    〒<%= @order.postal_code.to_s.insert(3, "-") %>
+    <%= @order.address %><br />
+    <%= @order.name %>
+    
+    <h4>支払方法</h4>
+    <%= @order.payment_type %>
+    
+    <h4>注文ステータス</h4>
+    <%= form_with model: @order, url: admin_order_path(@order), local: true do |f| %>
+      <%= f.select :status, Order.statuses.keys %>
+      <%= f.submit "更新" %>
+    <% end %>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8">
+      <table>
+        <thead>
+            <tr>
+                <td>商品名</td>
+                <td>単価(税込み)</td>
+                <td>数量</td>
+                <td>小計</td>
+                <td>制作ステータス</td>
+            </tr>
+        </thead>
+        <tbody>
+          <% @order_products.each do |order_product| %>
+            <tr>
+                <td><%= order_product.product.name %></td>
+                <td><%= order_product.price %></td>
+                <td><%= order_product.amount %></td>
+                <td><%= order_product.total_price %></td>
+                <td>
+                  <%= form_with model: order_product, url: admin_order_product_path(order_product), local: true do |f| %>
+                    <%= f.select :making_status,OrderProduct.making_statuses.keys %>
+                    <%= f.submit "更新" %>
+                  <% end %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="col-md-4">
+      <h4>商品合計</h4>
+        <%= @order.total_price %>
+      <h4>送料</h4>
+      <%= @order.postage %>
+      <h4>請求金額合計</h4>
+      <%= @order.total_pay %>
+    </div>
+   
+  </div>
+  
+</div>
