@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :views, class_name: "Admin::View"
   devise_for :customers
   scope module: :public do
     root 'homes#top'
