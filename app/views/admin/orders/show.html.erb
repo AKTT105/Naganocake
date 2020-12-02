@@ -43,9 +43,9 @@
           <% @order_products.each do |order_product| %>
             <tr>
                 <td><%= order_product.product.name %></td>
-                <td><%= order_product.price %></td>
+                <td><%= order_product.price.to_s(:delimited) %></td>
                 <td><%= order_product.amount %></td>
-                <td><%= order_product.total_price %></td>
+                <td><%= order_product.total_price.to_s(:delimited) %></td>
                 <td>
                   <%= form_with model: order_product, url: admin_order_product_path(order_product), local: true do |f| %>
                     <%= f.select :making_status,OrderProduct.making_statuses.keys %>
@@ -60,11 +60,11 @@
     
     <div class="col-md-4">
       <h4>商品合計</h4>
-        <%= @order.total_price %>
+        <%= @order.total_price.to_s(:delimited) %>
       <h4>送料</h4>
       <%= @order.postage %>
       <h4>請求金額合計</h4>
-      <%= @order.total_payment %>
+      <%= @order.total_payment.to_s(:delimited) %>
     </div>
    
   </div>

@@ -20,9 +20,7 @@
           <% @orders.each do |order| %>
            <tr>
             <td>
-              <%= link_to admin_order_path(order) do %>
-                <%= order.created_at %>
-              <% end %>
+              <%= link_to order.created_at.strftime('%Y/%m/%d %H:%M:%S'), admin_order_path(order) %>
             </td>
             <td><%= order.customer.last_name %><%= order.customer.first_name %></td>
             <td><%= order.order_products.all.sum(:amount) %></td>
