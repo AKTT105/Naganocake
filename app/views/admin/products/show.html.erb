@@ -1,0 +1,32 @@
+<h2>商品詳細</h2>
+
+<div>
+  <%= attachment_image_tag(@product, :profile_image, :fill, 200, 200) %>
+</div>
+
+<div>
+  <table>
+    <tbody>
+      <td>
+        <tr>商品名</tr>
+        <tr><%= @product.name %></tr>
+      </td>
+      <td>
+        <tr>商品説明</tr>
+        <tr><%= @product.introduction %></tr>
+      </td>
+      <td>
+        <tr>ジャンル</tr>
+        <tr><%= @product.genre_id %></tr>
+      </td>
+      <td>
+        <tr>販売ステータス</tr>
+        <tr><%= @product.is_active %></tr>
+      </td>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <%= link_to "編集する", edit_admin_product(@product) %>
+</div>

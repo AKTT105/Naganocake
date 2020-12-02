@@ -1,0 +1,27 @@
+<h2>商品編集</h2>
+
+<%= form_with model: @product, local: true do |f| %>
+  <div class="field">
+    <%= f.label :image_id, "商品名" %>
+    <%= f.attachment_field :image_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name, "商品説明" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :genre_id, "ジャンル" %>
+    <%= f.collection_select(:genre_id, @genre, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :price, "税抜価格" %>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :is_active, "販売ステータス" %>
+    <%= f.select :is_active, [["販売中", true], ["売り切れ", false]] %>
+  </div>
+  <div>
+    <%= f.submit "変更を保存" %>
+  </div>
+<% end %>
