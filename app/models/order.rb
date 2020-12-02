@@ -21,7 +21,4 @@ class Order < ApplicationRecord
     order_products.to_a.sum{|order_product| order_product.total_price}
   end
 
-  def total_pay
-    self.total_price + postage
-  end
 end
