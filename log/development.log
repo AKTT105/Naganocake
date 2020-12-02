@@ -436,13 +436,13 @@ Migrating to AddIsDeletedToCustomers (20201130083739)
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-Started GET "/" for 118.238.204.135 at 2020-12-01 08:00:54 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 207.65.226.63 at 2020-12-01 11:23:13 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
+
 ActionController::RoutingError (uninitialized constant Public):
-  
+
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
@@ -503,11 +503,121 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/" for 118.238.204.135 at 2020-12-01 08:00:55 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
+Started GET "/admin/products" for 207.65.226.63 at 2020-12-01 11:24:46 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/admin/products/index.html.erb:14
+  Rendered admin/products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 619ms (Views: 590.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/products" for 207.65.226.63 at 2020-12-01 11:24:48 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#index as HTML
+  Rendering admin/products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/admin/products/index.html.erb:14
+  Rendered admin/products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:24:59 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms)
+
+
+
+SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...m_with model: @product, local :true do |f| @output_buffer.sa...
+...                              ^
+/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:28: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+
+app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/admin/products/new.html.erb:28: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:26:37 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...rm_with model:@product, local :true do |f| @output_buffer.sa...
+...                              ^
+/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+
+app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:18 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+
+SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...rm_with model:@product, local :true do |f| @output_buffer.sa...
+...                              ^
+/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+
+app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:22 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+
+
+SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...rm_with model:@product, local :true do |f| @output_buffer.sa...
+...                              ^
+/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+
+app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:25 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...rm_with model:@product, local :true do |f| @output_buffer.sa...
+...                              ^
+/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+
+app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/" for 207.65.226.63 at 2020-12-01 11:28:30 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
 ActionController::RoutingError (uninitialized constant Public):
-  
+
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
 bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
@@ -568,11 +678,154 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/sign_in" for 118.238.204.135 at 2020-12-01 08:01:07 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (No route matches [GET] "/sign_in"):
-  
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:28:50 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...rm_with model:@product, local :true do |f| @output_buffer.sa...
+...                              ^
+/home/ec2-user/environment/Naganocake/app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+
+app/views/admin/products/new.html.erb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/views/admin/products/new.html.erb:33: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/admin/products/:id" for 207.65.226.63 at 2020-12-01 11:35:00 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>":id"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:18
+Completed 404 Not Found in 14ms (ActiveRecord: 0.8ms)
+
+
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=:id):
+
+app/controllers/admin/products_controller.rb:18:in `show'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:37:33 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (21.3ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f52141b2458>
+Did you mean?  image_id_in_database):
+    2: <%= form_with model:@product, local: true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :image_id, "商品名" %>
+    5:     <%= f.attachment_field :image_id %>
+    6:   </div>
+    7:
+    8:   <div class="field">
+
+app/views/admin/products/new.html.erb:5:in `block in _app_views_admin_products_new_html_erb__2118883763675972395_69995251225580'
+app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb__2118883763675972395_69995251225580'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:38:35 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error (undefined method `image_id_attachment_definition' for #<Product:0x00007f5208731a48>
+Did you mean?  image_id_in_database):
+    2: <%= form_with model:@product, local: true do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :image_id, "商品名" %>
+    5:     <%= f.attachment_field :image_id %>
+    6:   </div>
+    7:
+    8:   <div class="field">
+
+app/views/admin/products/new.html.erb:5:in `block in _app_views_admin_products_new_html_erb__2118883763675972395_69995152919520'
+app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb__2118883763675972395_69995152919520'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:43:57 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.6ms)
+
+
+
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    12:
+    13:   <div class="field">
+    14:     <%= f.label :genre_id, "ジャンル" %>
+    15:     <%= f.collection_select(:genre_id, @genre, :id, :name) %>
+    16:   </div>
+    17:
+    18:   <div class="field">
+
+app/views/admin/products/new.html.erb:15:in `block in _app_views_admin_products_new_html_erb__2118883763675972395_69995251993820'
+app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb__2118883763675972395_69995251993820'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:47:01 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:15
+  Rendered admin/products/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 46ms (Views: 34.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:47:03 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:15
+  Rendered admin/products/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:50:02 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:20
+  Rendered admin/products/new.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:50:15 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:20
+  Rendered admin/products/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:50:27 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:19
+  Rendered admin/products/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/products" for 207.65.226.63 at 2020-12-01 11:51:14 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/products"):
+
 actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
@@ -600,74 +853,12 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/sign_in" for 118.238.204.135 at 2020-12-01 08:01:34 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (1.0ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (24.6ms)
-Completed 200 OK in 263ms (Views: 249.4ms | ActiveRecord: 0.7ms)
+Started POST "/products" for 207.65.226.63 at 2020-12-01 11:52:58 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 
+ActionController::RoutingError (No route matches [POST] "/products"):
 
-Started GET "/admin/sign_up" for 118.238.204.135 at 2020-12-01 08:01:46 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::RegistrationsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (0.5ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.9ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (8.0ms)
-Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_up" for 118.238.204.135 at 2020-12-01 08:01:53 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::RegistrationsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_error_messages.html.erb (0.5ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/registrations/new.html.erb within layouts/application (13.4ms)
-Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 118.238.204.135 at 2020-12-01 08:21:25 +0000
-Cannot render console from 118.238.204.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
-
-
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
-  ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:40:57 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-ActiveRecord::PendingMigrationError (
-
-Migrations are pending. To resolve this issue, run:
-
-        bin/rails db:migrate RAILS_ENV=development
-
-):
-  
-activerecord (5.2.4.4) lib/active_record/migration.rb:579:in `check_pending!'
-activerecord (5.2.4.4) lib/active_record/migration.rb:556:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -694,1450 +885,405 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-01 11:54:18 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:19
+  Rendered admin/products/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 33ms (Views: 21.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/products" for 207.65.226.63 at 2020-12-01 11:56:05 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/products"):
+
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/products/1" for 207.65.226.63 at 2020-12-01 11:58:05 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:18
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+
+app/controllers/admin/products_controller.rb:18:in `show'
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-Migrating to DeviseCreateAdminViews (20201201083539)
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  ↳ db/migrate/20201201083539_devise_create_admin_views.rb:5
-  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "admin_views" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
-  ↳ db/migrate/20201201083539_devise_create_admin_views.rb:5
-  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_views_on_email" ON "admin_views" ("email")[0m
-  ↳ db/migrate/20201201083539_devise_create_admin_views.rb:39
-  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_views_on_reset_password_token" ON "admin_views" ("reset_password_token")[0m
-  ↳ db/migrate/20201201083539_devise_create_admin_views.rb:40
-  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201201083539"]]
   ↳ bin/rails:9
-  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdmins (20201130022613)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130022613_devise_create_admins.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  ↳ db/migrate/20201130022613_devise_create_admins.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  ↳ db/migrate/20201130022613_devise_create_admins.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130022613"]]
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateCustomers (20201130022706)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130022706_devise_create_customers.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_email" ON "customers" ("email")[0m
+  ↳ db/migrate/20201130022706_devise_create_customers.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_customers_on_reset_password_token" ON "customers" ("reset_password_token")[0m
+  ↳ db/migrate/20201130022706_devise_create_customers.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130022706"]]
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20201130073423)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "is_active" boolean, "created_at" datetime NOT NULL, "update_at" datetime, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130073423_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130073423"]]
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateDeliveries (20201130074134)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "deliveries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "address" varchar, "postal_code" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130074134_create_deliveries.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130074134"]]
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProducts (20201130075031)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer, "name" varchar, "image_id" varchar, "introduction" text, "price" integer, "is_active" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130075031_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130075031"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20201130075442)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "postal_code" varchar, "address" varchar, "name" varchar, "postage" integer, "total_payment" integer, "payment_type" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130075442_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130075442"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateCartProducts (20201130075546)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "cart_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "product_id" integer, "amount" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130075546_create_cart_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130075546"]]
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrderProducts (20201130080732)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "order_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order_id" integer, "product_id" integer, "price" integer, "amount" integer, "making_status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201130080732_create_order_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130080732"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddLastNameToCustomers (20201130081237)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "last_name" varchar[0m
+  ↳ db/migrate/20201130081237_add_last_name_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130081237"]]
+  ↳ bin/rails:9
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddFirstNameToCustomers (20201130083059)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "first_name" varchar[0m
+  ↳ db/migrate/20201130083059_add_first_name_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083059"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddFirstNameKanaToCustomers (20201130083232)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "first_name_kana" varchar[0m
+  ↳ db/migrate/20201130083232_add_first_name_kana_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083232"]]
+  ↳ bin/rails:9
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddLastNameKanaToCustomers (20201130083314)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "last_name_kana" varchar[0m
+  ↳ db/migrate/20201130083314_add_last_name_kana_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083314"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddPostalCodeToCustomers (20201130083408)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "postal_code" varchar[0m
+  ↳ db/migrate/20201130083408_add_postal_code_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083408"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddAdressToCustomers (20201130083444)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "adress" varchar[0m
+  ↳ db/migrate/20201130083444_add_adress_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083444"]]
+  ↳ bin/rails:9
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddPhoneNumberToCustomers (20201130083613)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "phone_number" varchar[0m
+  ↳ db/migrate/20201130083613_add_phone_number_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083613"]]
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddIsDeletedToCustomers (20201130083739)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "is_deleted" boolean[0m
+  ↳ db/migrate/20201130083739_add_is_deleted_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201130083739"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
   ↳ bin/rails:9
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   ↳ bin/rails:9
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   ↳ bin/rails:9
-  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-02 02:13:23.981964"], ["updated_at", "2020-12-02 02:13:23.981964"]]
   ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
   ↳ bin/rails:9
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:41:46 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (1.0ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (24.8ms)
-Completed 200 OK in 287ms (Views: 267.0ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:42:04 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:43:01 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
-Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:44:06 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
-Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 123.222.140.133 at 2020-12-01 10:44:56 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Public):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/" for 123.222.140.133 at 2020-12-01 10:44:58 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Public):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:45:07 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:48:24 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (1.0ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (8.3ms)
-Completed 200 OK in 231ms (Views: 213.3ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:48:43 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.9ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (7.9ms)
-Completed 200 OK in 237ms (Views: 219.6ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:48:55 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:49:05 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:49:48 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:49:51 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin" for 123.222.140.133 at 2020-12-01 10:51:35 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Admin::HomesController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:51:40 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.8ms)
-Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 10:53:43 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.8ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
-Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:06:42 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.9ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (8.1ms)
-Completed 200 OK in 239ms (Views: 221.4ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:32:24 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (1.0ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (9.5ms)
-Completed 200 OK in 241ms (Views: 222.5ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:34:32 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (1.0ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (9.1ms)
-Completed 200 OK in 248ms (Views: 230.5ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:34:36 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (0.9ms)
-  Rendered /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views/devise/sessions/new.html.erb within layouts/application (6.6ms)
-Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:48:29 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (8.3ms)
-Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (Missing partial admins/shared/_links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
-  * "/home/ec2-user/environment/Naganocake/app/views"
-  * "/home/ec2-user/.rvm/gems/ruby-2.6.3/gems/devise-4.7.3/app/views"
-):
-    25:       </div>
-    26:     <% end %>
-    27: 
-    28:     <%= render "admins/shared/links" %>
-    29:   </div>
-    30: </div>
-  
-app/views/admin/sessions/new.html.erb:28:in `_app_views_admin_sessions_new_html_erb__2473004366442808818_69968476427780'
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:49:42 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/shared/_links.html.erb (0.9ms)
-  Rendered admin/sessions/new.html.erb within layouts/application (5.2ms)
-Completed 200 OK in 179ms (Views: 178.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 123.222.140.133 at 2020-12-01 11:52:35 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Public):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:54:11 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:54:25 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/shared/_links.html.erb (0.8ms)
-  Rendered admin/sessions/new.html.erb within layouts/application (5.1ms)
-Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:56:22 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/shared/_links.html.erb (0.7ms)
-  Rendered admin/sessions/new.html.erb within layouts/application (4.0ms)
-Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:56:33 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:56:56 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (0.8ms)
-Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
-
-
-  
-SyntaxError (/home/ec2-user/environment/Naganocake/app/views/admin/sessions/new.html.erb:24: syntax error, unexpected ensure, expecting end-of-input
-          ensure
-          ^~~~~~):
-  
-app/views/admin/sessions/new.html.erb:24: syntax error, unexpected ensure, expecting end-of-input
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:57:15 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 11:57:52 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 123.222.140.133 at 2020-12-01 12:00:55 +0000
-Cannot render console from 123.222.140.133! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 01:49:46 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (16.3ms)
-Completed 200 OK in 278ms (Views: 260.0ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 01:50:29 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.8ms)
-Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 01:50:54 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:11:06 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (15.1ms)
-Completed 200 OK in 257ms (Views: 238.5ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:11:43 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:15:36 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:18:42 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:20:46 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.8ms)
-Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:21:41 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:22:10 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:22:27 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:23:13 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:23:20 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:27:40 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 02:27:46 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Admin::HomesController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 02:42:07 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Admin::HomesController#top as HTML
-Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
-
-
-  
-NoMethodError (undefined method `count' for nil:NilClass):
-  
-app/controllers/admin/homes_controller.rb:3:in `top'
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 02:43:03 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Admin::HomesController#top as HTML
-Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
-
-
-  
-NoMethodError (undefined method `count' for nil:NilClass):
-  
-app/controllers/admin/homes_controller.rb:3:in `top'
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 02:44:11 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Admin::HomesController#top as HTML
-  Rendering admin/homes/top.html.erb within layouts/application
-  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 694ms (Views: 692.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 02:47:19 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Admin::HomesController#top as HTML
-  Rendering admin/homes/top.html.erb within layouts/application
-  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:52:57 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (7.4ms)
-Completed 200 OK in 60ms (Views: 40.1ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:53:35 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UJM00bEYx7zIN2Rwfwn2ZUZwd1HqsvAdB80WtDAu9ZUW4sxkfPEjo0sBZ2R0Qkh8xgEW6KDKuwe5rHtbX26wNg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 11ms (ActiveRecord: 0.7ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UJM00bEYx7zIN2Rwfwn2ZUZwd1HqsvAdB80WtDAu9ZUW4sxkfPEjo0sBZ2R0Qkh8xgEW6KDKuwe5rHtbX26wNg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.0ms)
-Completed 200 OK in 328ms (Views: 30.8ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 02:58:20 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"infg+QfQvCOOLK/AGGhqYSh+SRhGOT/OZ6lttDtVNZvMBhhMyjlYPA0arNQTI9R4qA8ooQxBdNTZyABbVBVwOA==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 6ms (ActiveRecord: 0.8ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"infg+QfQvCOOLK/AGGhqYSh+SRhGOT/OZ6lttDtVNZvMBhhMyjlYPA0arNQTI9R4qA8ooQxBdNTZyABbVBVwOA==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 304ms (Views: 19.8ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:03:34 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OawU5nvh2sWPjjeld5qrNj+yDkx79usfGaAegzeQe/J/3exTtgg+2gy4NLF80RUvv8Nv9TGOoAWnwXNsWNA+UQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 5ms (ActiveRecord: 0.7ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OawU5nvh2sWPjjeld5qrNj+yDkx79usfGaAegzeQe/J/3exTtgg+2gy4NLF80RUvv8Nv9TGOoAWnwXNsWNA+UQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 304ms (Views: 20.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:03:45 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.1ms)
-Completed 200 OK in 27ms (Views: 18.3ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:09:41 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 27ms (Views: 18.5ms | ActiveRecord: 0.7ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:10:05 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Te7KjptacDzBemtLthlpyLlTNLM+u7n4VdqzwDuZPQoLnzI7VrOUI0JMaF+9UtfROSJVCnTD8uLru94vVNl4qQ==", "admin"=>{"email"=>"tset1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "tset1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Te7KjptacDzBemtLthlpyLlTNLM+u7n4VdqzwDuZPQoLnzI7VrOUI0JMaF+9UtfROSJVCnTD8uLru94vVNl4qQ==", "admin"=>{"email"=>"tset1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 297ms (Views: 18.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:12:19 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 27ms (Views: 18.2ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:12:36 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7WWmD8cjNXQvDdmxLnBXW/JQhpW9ugSngmZH7FP7NrGrFF66CsrRa6w72qUlO+lCciHnLPfCT708ByoDPLtzEg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 15ms (ActiveRecord: 0.8ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7WWmD8cjNXQvDdmxLnBXW/JQhpW9ugSngmZH7FP7NrGrFF66CsrRa6w72qUlO+lCciHnLPfCT708ByoDPLtzEg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (19.1ms)
-Completed 200 OK in 536ms (Views: 249.8ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:24:18 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-SyntaxError (/home/ec2-user/environment/Naganocake/app/controllers/application_controller.rb:11: syntax error, unexpected end, expecting end-of-input):
-  
-app/controllers/application_controller.rb:11: syntax error, unexpected end, expecting end-of-input
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:25:32 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4YSrVdbYeIc8NwFrWO8WvDwfUihNGgOli7CK66+lwx2n9VPgGzGcmL8BAn9TpKilvG4zkQdiSL810ecEwOWGvg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 16ms (ActiveRecord: 0.8ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4YSrVdbYeIc8NwFrWO8WvDwfUihNGgOli7CK66+lwx2n9VPgGzGcmL8BAn9TpKilvG4zkQdiSL810ecEwOWGvg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.4ms)
-Completed 200 OK in 555ms (Views: 266.7ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:25:38 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xb3BtTbH9vTnA8APYmLlR3VDxIVLxo/p7FdNma9wNDqDzDkA+y4S62Q1wxtpKVte9TKlPAG+xPNSNiB2wDBxmQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 5ms (ActiveRecord: 0.1ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xb3BtTbH9vTnA8APYmLlR3VDxIVLxo/p7FdNma9wNDqDzDkA+y4S62Q1wxtpKVte9TKlPAG+xPNSNiB2wDBxmQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 300ms (Views: 20.3ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:34:02 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVTWI8yrLnL4fI1fqRNo/Q6hGyfPkaYrEUYpl+fYddbbJS6WAULKbXtKjkuiWNbkjtB6noXp7TGvJ0R4iJgwdQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 7ms (ActiveRecord: 0.2ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nVTWI8yrLnL4fI1fqRNo/Q6hGyfPkaYrEUYpl+fYddbbJS6WAULKbXtKjkuiWNbkjtB6noXp7TGvJ0R4iJgwdQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 298ms (Views: 20.5ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:34:43 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3V4OB4mbKNOfgynTTuZU13iZ2L0ag0ddIVoO1Z0kWkabL/ayRHLMzBy1KsdFrerO+Oi5BFD7DEefO2M68mQf5Q==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3V4OB4mbKNOfgynTTuZU13iZ2L0ag0ddIVoO1Z0kWkabL/ayRHLMzBy1KsdFrerO+Oi5BFD7DEefO2M68mQf5Q==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 298ms (Views: 18.9ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:35:39 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wvVB/rE3wZ9KnMoo8GFfBIRfpIe9lpHU6HtJn64JkjSEhLlLfN4lgMmqyTz7KuEdBC7FPvfu2s5WGiRwwUnXlw==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 15ms (ActiveRecord: 0.8ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wvVB/rE3wZ9KnMoo8GFfBIRfpIe9lpHU6HtJn64JkjSEhLlLfN4lgMmqyTz7KuEdBC7FPvfu2s5WGiRwwUnXlw==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (19.4ms)
-Completed 200 OK in 541ms (Views: 253.5ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 125.202.229.23 at 2020-12-02 03:36:52 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Public):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:40:50 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JymLBB/wZw2yeeoxC1oQZym8DfGfrDX85awN3lGF6/1hWHOx0hmDEjFP6SUAEa5+qc1sSNXUfuZbzWAxPsWuXg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 6ms (ActiveRecord: 0.1ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JymLBB/wZw2yeeoxC1oQZym8DfGfrDX85awN3lGF6/1hWHOx0hmDEjFP6SUAEa5+qc1sSNXUfuZbzWAxPsWuXg==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 296ms (Views: 19.0ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:41:22 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 239ms (Views: 221.2ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:41:32 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKTxthPNUc0Grf3Pi60G5lX32eB6T7qowkNfjdiev8rq1QkD3iS10oWb/tuA5rj/1Ya4WTA38bJ8IjJit976aQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKTxthPNUc0Grf3Pi60G5lX32eB6T7qowkNfjdiev8rq1QkD3iS10oWb/tuA5rj/1Ya4WTA38bJ8IjJit976aQ==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 300ms (Views: 19.2ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 03:55:53 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Admin::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tMaHog00VboSbOKC8z7ZgFVR0WoLfASx0skjUHsNmlTyt38XwN2xpZFa4Zb4dWeZ1SCw00EET6tsqE6/FE3f9w==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.co.jp"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 7ms (ActiveRecord: 0.7ms)
-
-
-Processing by Admin::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tMaHog00VboSbOKC8z7ZgFVR0WoLfASx0skjUHsNmlTyt38XwN2xpZFa4Zb4dWeZ1SCw00EET6tsqE6/FE3f9w==", "admin"=>{"email"=>"test1@test.co.jp", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 309ms (Views: 20.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 04:21:33 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 04:39:19 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/" for 125.202.229.23 at 2020-12-02 04:41:43 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Public):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
+Started GET "/admin/products/1" for 207.65.226.63 at 2020-12-02 02:34:20 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:18
+Completed 404 Not Found in 23ms (ActiveRecord: 0.8ms)
+
+
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+
+app/controllers/admin/products_controller.rb:18:in `show'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ db/seeds.rb:9
-  [1m[36mAdmin Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
-  ↳ db/seeds.rb:9
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 06:09:09 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Admin::HomesController#top as HTML
-  Rendering admin/homes/top.html.erb within layouts/application
-  Rendered admin/homes/top.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 372ms (Views: 364.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 06:09:15 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (8.5ms)
-Completed 200 OK in 44ms (Views: 30.6ms | ActiveRecord: 0.7ms)
-
-
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 06:09:39 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rn8OunkbwRaWTG0Zi0OkO8FTB1BpOJefmhAGMgXxJccADvYPtPIlCRV6bg2ACBoiQSJm6SNA3IUkcWvdarFgZA==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms)
-
-
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rn8OunkbwRaWTG0Zi0OkO8FTB1BpOJefmhAGMgXxJccADvYPtPIlCRV6bg2ACBoiQSJm6SNA3IUkcWvdarFgZA==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 301ms (Views: 21.2ms | ActiveRecord: 0.0ms)
-
-
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  ↳ db/seeds.rb:9
-  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
-  ↳ db/seeds.rb:9
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 06:13:26 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/admin/products/1" for 207.65.226.63 at 2020-12-02 02:46:11 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 269ms (Views: 251.8ms | ActiveRecord: 0.6ms)
+Processing by Admin::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/products_controller.rb:18
+Completed 404 Not Found in 14ms (ActiveRecord: 0.7ms)
 
 
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 06:13:36 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a658mzS0aJnbRhJ+AxMCC8JcUiw48z8SsgalvZjA+DUt34Qu+V2MhlhwEWoIWLwSQi0zlXKLdAgMZ8hS94C9lg==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+
+app/controllers/admin/products_controller.rb:18:in `show'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:46:19 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:19
+  Rendered admin/products/new.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 337ms (Views: 325.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:46:21 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/products/new.html.erb:19
+  Rendered admin/products/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/products" for 207.65.226.63 at 2020-12-02 02:46:26 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [POST] "/products"):
+
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:54:18 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 6ms (ActiveRecord: 0.2ms)
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms)
 
 
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a658mzS0aJnbRhJ+AxMCC8JcUiw48z8SsgalvZjA+DUt34Qu+V2MhlhwEWoIWLwSQi0zlXKLdAgMZ8hS94C9lg==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 302ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    16:
+    17:   <div class="field">
+    18:     <%= f.label :genre_id, "ジャンル" %>
+    19:     <%= f.select :genre_id, [["ケーキ", 1]["クッキー", 2]] %>
+    20:   </div>
+    21:
+    22:   <div class="field">
+
+app/views/admin/products/new.html.erb:19:in `[]'
+app/views/admin/products/new.html.erb:19:in `block in _app_views_admin_products_new_html_erb___634734521338274520_70109841038060'
+app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb___634734521338274520_70109841038060'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:55:53 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/admin/sign_in" for 125.202.229.23 at 2020-12-02 06:13:55 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    16:
+    17:   <div class="field">
+    18:     <%= f.label :genre_id, "ジャンル" %>
+    19:     <%= f.select :genre_id, [["ケーキ"]["クッキー"]] %>
+    20:   </div>
+    21:
+    22:   <div class="field">
+
+app/views/admin/products/new.html.erb:19:in `[]'
+app/views/admin/products/new.html.erb:19:in `block in _app_views_admin_products_new_html_erb___634734521338274520_70109841415360'
+app/views/admin/products/new.html.erb:2:in `_app_views_admin_products_new_html_erb___634734521338274520_70109841415360'
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:57:07 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Processing by Devise::SessionsController#new as HTML
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (3.6ms)
-Completed 200 OK in 270ms (Views: 251.9ms | ActiveRecord: 0.6ms)
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 253ms (Views: 234.6ms | ActiveRecord: 0.6ms)
 
 
-Started POST "/admin/sign_in" for 125.202.229.23 at 2020-12-02 06:14:02 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iyTi/0S4Pfdons5PAE3KckQ9QauNym/uawBYixDAJePNVRpKiVHZ6OuozVsLBnRrxEwgEseyJPTVYTVkf4BgQA==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms)
+Started GET "/admin/products/new" for 207.65.226.63 at 2020-12-02 02:57:09 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::ProductsController#new as HTML
+  Rendering admin/products/new.html.erb within layouts/application
+  Rendered admin/products/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 59ms (Views: 58.1ms | ActiveRecord: 0.0ms)
 
 
-Processing by Devise::SessionsController#new as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iyTi/0S4Pfdons5PAE3KckQ9QauNym/uawBYixDAJePNVRpKiVHZ6OuozVsLBnRrxEwgEseyJPTVYTVkf4BgQA==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
-  Rendering admin/sessions/new.html.erb within layouts/application
-  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 301ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+Started POST "/products" for 207.65.226.63 at 2020-12-02 02:57:26 +0000
+Cannot render console from 207.65.226.63! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 
+ActionController::RoutingError (No route matches [POST] "/products"):
 
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 06:16:43 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -2164,421 +1310,3 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers/1" for 125.202.229.23 at 2020-12-02 06:27:08 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers/index" for 125.202.229.23 at 2020-12-02 06:27:13 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers/" for 125.202.229.23 at 2020-12-02 06:27:18 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 06:28:17 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Started GET "/" for 125.202.229.23 at 2020-12-02 06:28:17 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (uninitialized constant Public):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:283:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 06:33:09 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-ActionController::RoutingError (uninitialized constant Admin::CustomersController):
-  
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `block in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:9:in `without_bootsnap_cache'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:80:in `rescue in load_missing_constant'
-bootsnap (1.5.1) lib/bootsnap/load_path_cache/core_ext/active_support.rb:59:in `load_missing_constant'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `const_get'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:285:in `block in constantize'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `each'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `inject'
-activesupport (5.2.4.4) lib/active_support/inflector/methods.rb:281:in `constantize'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
-actionpack (5.2.4.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:46:in `controller'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:52:in `block in serve'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `each'
-actionpack (5.2.4.4) lib/action_dispatch/journey/router.rb:35:in `serve'
-actionpack (5.2.4.4) lib/action_dispatch/routing/route_set.rb:840:in `call'
-warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
-warden (1.2.9) lib/warden/manager.rb:34:in `catch'
-warden (1.2.9) lib/warden/manager.rb:34:in `call'
-rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.2.3) lib/rack/etag.rb:27:in `call'
-rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
-rack (2.2.3) lib/rack/head.rb:12:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
-rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/cookies.rb:670:in `call'
-activerecord (5.2.4.4) lib/active_record/migration.rb:559:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-activesupport (5.2.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.2.3) lib/rack/method_override.rb:24:in `call'
-rack (2.2.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
-railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
-puma (3.12.6) lib/puma/configuration.rb:227:in `call'
-puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
-puma (3.12.6) lib/puma/server.rb:476:in `process_client'
-puma (3.12.6) lib/puma/server.rb:334:in `block in run'
-puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 06:38:06 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
-  
-ActionController::RoutingError (undefined local variable or method `index' for Admin::CustomersController:Class):
-  
-app/controllers/admin/customers_controller.rb:3:in `<class:CustomersController>'
-app/controllers/admin/customers_controller.rb:1:in `<main>'
-Started GET "/admin/customers" for 125.202.229.23 at 2020-12-02 06:38:47 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-  
-ActionController::RoutingError (undefined local variable or method `index' for Admin::CustomersController:Class):
-  
-app/controllers/admin/customers_controller.rb:3:in `<class:CustomersController>'
-app/controllers/admin/customers_controller.rb:1:in `<main>'
-Started GET "/admin" for 125.202.229.23 at 2020-12-02 06:40:16 +0000
-Cannot render console from 125.202.229.23! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
-Processing by Admin::HomesController#top as HTML
-  Rendering admin/homes/top.html.erb within layouts/application
-  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 255ms (Views: 253.6ms | ActiveRecord: 0.0ms)
-
-
