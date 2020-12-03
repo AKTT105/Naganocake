@@ -20,12 +20,6 @@ class Admin::GenresController < ApplicationController
   def edit
     @genre = Genre.find(params[:id])
     #binding.pry
-    # if @genre.save(params[:id])
-    #   redirect_to edit_admin_genre_path
-    # else
-    #   @genres = Genre.all
-    #   render 'index'
-    # end
   end
 
   def update
