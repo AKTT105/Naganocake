@@ -11,9 +11,9 @@ class OrderProduct < ApplicationRecord
   }
   
   # ActiveRcordのところに書く？
-  before_save do
-    self.price = Product.price * 1.1
-  end
+  # before_save do
+  #   self.price = Product.price * 1.1
+  # end
   
   # 注文商品の小計を算出するメソッド
   def total_price
