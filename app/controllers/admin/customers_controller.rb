@@ -22,7 +22,7 @@ class Admin::CustomersController < ApplicationController
     redirect_to new_admin_session_path
     end
   end
-
+    
   def show
    @customer = Customer.find(params[:id])
   end
