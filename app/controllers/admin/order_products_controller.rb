@@ -10,4 +10,6 @@ class Admin::OrderProductsController < ApplicationController
   def order_product_params
     params.require(:order_product).permit(:making_status)
   end
+  
+
 end

@@ -17,7 +17,8 @@ class Order < ApplicationRecord
     発送済み:   4
   }
 
-  def total_price
+  # 注文の合計請求金額を算出するメソッド
+  def order_total_price
     order_products.to_a.sum{|order_product| order_product.total_price}
   end
 
