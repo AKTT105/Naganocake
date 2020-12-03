@@ -1,6 +1,8 @@
-<h2>商品編集</h2>
+<mark>
+  <h2>商品編集</h2>
+</mark>
 
-<%= form_with model: @product, url: edit_admin_product_path, local: true do |f| %>
+<%= form_with model: @product, url: admin_product_path(@product), local: true do |f| %>
   <div class="field">
     <%= f.label :image, "商品名" %>
     <%= f.attachment_field :image %>
@@ -15,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :price, "税抜価格" %>
-    <%= f.number_field :price %>
+    <%= f.number_field :price %>円
   </div>
   <div class="field">
     <%= f.label :is_active, "販売ステータス" %>
-    <%= f.select :is_active, [["販売中", true], ["売り切れ", false]] %>
+    <%= f.select :is_active, [["販売中", true], ["販売中止", false]] %>
   </div>
   <div class="actions">
     <%= f.submit "変更を保存" %>
