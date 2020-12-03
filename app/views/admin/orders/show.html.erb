@@ -3,7 +3,7 @@
 <div class="container">
   
   <div class="row">
-    <h3>注文履歴詳細</h3>
+    <h3><mark>注文履歴詳細</mark></h3>
   </div>
   
   <div class="row">
@@ -23,13 +23,13 @@
     <h4>注文ステータス</h4>
     <%= form_with model: @order, url: admin_order_path(@order), local: true do |f| %>
       <%= f.select :status, Order.statuses.keys %>
-      <%= f.submit "更新" %>
+      <%= f.submit "更新", class:'btn btn-info' %>
     <% end %>
   </div>
   
   <div class="row">
     <div class="col-md-8">
-      <table>
+      <table class="table">
         <thead>
             <tr>
                 <td>商品名</td>
@@ -49,7 +49,7 @@
                 <td>
                   <%= form_with model: order_product, url: admin_order_product_path(order_product), local: true do |f| %>
                     <%= f.select :making_status,OrderProduct.making_statuses.keys %>
-                    <%= f.submit "更新" %>
+                    <%= f.submit "更新", class:'btn btn-info' %>
                   <% end %>
                 </td>
             </tr>
@@ -60,11 +60,11 @@
     
     <div class="col-md-4">
       <h4>商品合計</h4>
-        <%= @order.order_total_price.to_s(:delimited) %>
+      <%= @order.order_total_price.to_s(:delimited) %>円
       <h4>送料</h4>
-      <%= @order.postage %>
+      <%= @order.postage %>円
       <h4>請求金額合計</h4>
-      <%= @order.total_pay.to_s(:delimited) %>
+      <%= @order.total_pay.to_s(:delimited) %>円
     </div>
    
   </div>
