@@ -11949,3 +11949,1316 @@ Processing by Admin::CustomersController#index as HTML
   ↳ app/views/admin/customers/index.html.erb:12
   Rendered admin/customers/index.html.erb within layouts/application (2.8ms)
 Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.1ms)
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:35:42 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (124.1ms)
+Completed 200 OK in 442ms (Views: 417.4ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:35:52 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太", "last_name"=>"山", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"y47QeFF44hYyT4BUPkURz/2OOZdGVisy137uqAh7AJ4lTAdqaQCXMJHni5thwXmSW4QivpZ9CSy7kzmibqtpsQ==", "id"=>"1"}
+  [1m[36mCustomer Load (1.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (3.0ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太"], ["last_name", "山"], ["updated_at", "2020-12-03 08:35:52.381565"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 18ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:35:52 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 64ms (Views: 63.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:35:54 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:35:57 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 89ms (Views: 86.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:36:23 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:36:30 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太1", "last_name"=>"山1", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"bJRhVRp5YZtdbCbvP80WyhvVyQSTRzpUG/SDEUhFehmCVrZHIgEUvf7ELSBgSX6Xvd/SLUNsGEp3GVQbLpUTNg==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.4ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太1"], ["last_name", "山1"], ["updated_at", "2020-12-03 08:36:30.497025"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 14ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:36:30 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 75ms (Views: 74.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:36:32 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 86ms (Views: 83.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:36:35 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 118ms (Views: 113.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:36:42 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:36:47 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太3", "last_name"=>"山3", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"fYTcuHnX20nwRIxK1jy/F/mW0gHsu7Y0oTazMrgCQ6GTRguqQa+ub1Psh4WJuNdKX5zJKDyQlCrN22Q43tIqjg==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.4ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太3"], ["last_name", "山3"], ["updated_at", "2020-12-03 08:36:47.226812"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 18ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:36:47 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:36:49 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:41:28 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 60ms (Views: 56.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 08:41:29 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:41:30 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 66ms (Views: 55.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:41:41 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zpKFCqh/Mm2cbXRmrQV334EFbWNXZktD9xuSg+XypXeI432/ZZbWch9bd3KmTsnGAXQM2h0eAFlJev9sirLg1A==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zpKFCqh/Mm2cbXRmrQV334EFbWNXZktD9xuSg+XypXeI432/ZZbWch9bd3KmTsnGAXQM2h0eAFlJev9sirLg1A==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 363ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:43:53 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:43:59 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 57.0ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:44:09 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太4", "last_name"=>"山4", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"JB9ksl2eJxbZihidVTf89j0RTb/Oj/wLa+7xHg2wmdHK3bOgZeZSMHoiE1IKs5SrmxtWlh6k3hUHAyYUa2Dw/g==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.4ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太4"], ["last_name", "山4"], ["updated_at", "2020-12-03 08:44:09.410491"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 19ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:44:12 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:44:15 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:44:39 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:45:23 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太5", "last_name"=>"山5", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"t4Fgs7pY0wGpyjPkjnLpERtpu9pEV7InziOdKY6YyUlZQ7ehgiCmJwpiOCvR9oFMvWOg85R8kDmizkoj6EigZg==", "id"=>"1"}
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (1.5ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太5"], ["last_name", "山5"], ["updated_at", "2020-12-03 08:45:23.693233"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 14ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:45:23 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 60ms (Views: 59.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:45:25 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 75ms (Views: 73.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:45:28 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:50:00 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:50:06 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太7", "last_name"=>"山7", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"B+0MBoTfxmpm0RyImtG12rvlbBTkc6dFFpdwCat3hq7pL9sUvKezTMV5F0fFVd2HHe93PTRYhVt6eqcDzafvgQ==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.1ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太7"], ["last_name", "山7"], ["updated_at", "2020-12-03 08:50:06.273352"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 15ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:50:06 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 61ms (Views: 59.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:50:08 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:50:09 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:50:54 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 57ms (Views: 54.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:51:47 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 59ms (Views: 55.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:51:49 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:51:56 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太8", "last_name"=>"山8", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"MDtAMZmxLi8PI9iP/dJX7R4Dk9ilfayKWB0s2cSf/Xfe+ZcjoclbCayL00CiVj+wuAmI8XVWjpQ08PvTok+UWA==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (1.3ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太8"], ["last_name", "山8"], ["updated_at", "2020-12-03 08:51:56.096033"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 15ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:51:56 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:51:58 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 80ms (Views: 77.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:51:59 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:52:04 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太9", "last_name"=>"山9", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"jmBRVpBsMpbzWuggNZVWLQzeVI0uWxG1eiGvXOfcNM1gooZEqBRHsFDy4+9qET5wqtRPpP5wM6sWzHhWgQxd4g==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.3ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太9"], ["last_name", "山9"], ["updated_at", "2020-12-03 08:52:04.193752"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 19ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:52:04 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 78ms (Views: 77.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:52:06 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 08:52:08 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:52:16 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太10", "last_name"=>"山10", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"RL7/MKPF8Lq2N15cOXNE6H5ktbs22hRldXsH2+bkZq+qfCgim72FnBWfVZNm9yy12G6ukubxNnsZltDRgDQPgA==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (1.9ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太10"], ["last_name", "山10"], ["updated_at", "2020-12-03 08:52:16.146825"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 15ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:52:16 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 08:52:18 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 73ms (Views: 70.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 08:52:41 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 63.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:52:45 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:53:08 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FQ8jkJF7L5Wib4ZgDPucqBcMZiDn/ydNb+RCcgZ8QDFTftslXJLLiiFZhXQHsCKxl30Hma2HbFfRhS+daTwFkg==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FQ8jkJF7L5Wib4ZgDPucqBcMZiDn/ydNb+RCcgZ8QDFTftslXJLLiiFZhXQHsCKxl30Hma2HbFfRhS+daTwFkg==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 361ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:53:18 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wQJmXsb2uHq19GOMcxW+3GUXfiZXlzN9Vgqe9DWpMFaHc57rCx9cZTbCYJh4XgDF5WYfnx3veGfoa/MbWul19Q==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (2.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 6ms (ActiveRecord: 2.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wQJmXsb2uHq19GOMcxW+3GUXfiZXlzN9Vgqe9DWpMFaHc57rCx9cZTbCYJh4XgDF5WYfnx3veGfoa/MbWul19Q==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 376ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:53:31 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uTm5RGLR8JV3tWZR8879TwAQiZU49P3Qg9j22uS3NMn/SEHxrzgUivSDZUX4hUNWgGHoLHKMtso9uZs1i/dxag==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uTm5RGLR8JV3tWZR8879TwAQiZU49P3Qg9j22uS3NMn/SEHxrzgUivSDZUX4hUNWgGHoLHKMtso9uZs1i/dxag==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 364ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mAdmin Create (4.0ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test1@test.com"], ["encrypted_password", "$2a$12$.QJrdrdNt1.SIR0hi.qp2uMUW1aLd3aCnvv2GjDAjed5ibprcMkUa"], ["created_at", "2020-12-03 08:54:44.592328"], ["updated_at", "2020-12-03 08:54:44.592328"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:55:00 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 398ms (Views: 378.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/sign_in" for 111.239.154.169 at 2020-12-03 08:55:10 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PzuDaPVXDWBQVAD1WzoOa2qk8gHwy+nmxGSEnphezM95SnvdOL7pf9NiA+FQcbBy6tWTuLqzovx6Belx9x6JbA==", "admin"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin
+Completed 302 Found in 317ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 08:55:11 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant Admin::HomesController::OrderedProduct):
+  
+app/controllers/admin/homes_controller.rb:4:in `top'
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 08:56:04 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/controllers/admin/homes_controller.rb:5:in `top'
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 08:56:13 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 373ms (Views: 351.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:03:38 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (uninitialized constant Admin::HomesController::OrderedProduct):
+  
+app/controllers/admin/homes_controller.rb:4:in `top'
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:04:46 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `created_today' for #<Class:0x0000000005d470d8>
+Did you mean?  create_with):
+  
+app/controllers/admin/homes_controller.rb:4:in `top'
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:05:06 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_products"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 297ms (Views: 276.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:05:20 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_products"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 52.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/sign_in" for 111.239.154.169 at 2020-12-03 09:05:53 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:05:53 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_products"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 66ms (Views: 59.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/sign_in" for 111.239.154.169 at 2020-12-03 09:06:03 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:06:04 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_products"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 95ms (Views: 89.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:06:08 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_products"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 53.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:08:19 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_products"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 373ms (Views: 346.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admin" for 111.239.154.169 at 2020-12-03 09:10:09 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::HomesController#top as HTML
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  ↳ app/controllers/admin/homes_controller.rb:5
+  Rendering admin/homes/top.html.erb within layouts/application
+  Rendered admin/homes/top.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 393ms (Views: 364.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/customers/:id/edit" for 111.239.154.169 at 2020-12-03 09:13:42 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>":id"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+Completed 404 Not Found in 14ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=:id):
+  
+app/controllers/admin/customers_controller.rb:31:in `edit'
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:13:59 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (84.9ms)
+Completed 200 OK in 523ms (Views: 488.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/index" for 111.239.154.169 at 2020-12-03 09:14:20 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+Completed 404 Not Found in 3ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=index):
+  
+app/controllers/admin/customers_controller.rb:27:in `show'
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:14:33 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:15:02 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:44:07 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 403ms (Views: 394.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:44:38 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 70ms (Views: 54.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/orders.1" for 111.239.154.169 at 2020-12-03 09:44:41 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::OrdersController#index as 
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/admin/orders/index.html.erb:20
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/orders/index.html.erb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("order_products"."amount") FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admin/orders/index.html.erb:26
+  Rendered admin/orders/index.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 117ms (Views: 105.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/orders/1" for 111.239.154.169 at 2020-12-03 09:44:46 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/orders_controller.rb:8
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/orders_controller.rb:10
+  Rendering admin/orders/show.html.erb within layouts/application
+  [1m[36mOrderProduct Load (0.2ms)[0m  [1m[34mSELECT "order_products".* FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admin/orders/show.html.erb:43
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/orders/show.html.erb:45
+  Rendered admin/orders/show.html.erb within layouts/application (76.4ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    43:           <% @order_products.each do |order_product| %>
+    44:             <tr>
+    45:                 <td><%= order_product.product.name %></td>
+    46:                 <td><%= order_product.price.to_s(:delimited) %></td>
+    47:                 <td><%= order_product.amount %></td>
+    48:                 <td><%= order_product.total_price.to_s(:delimited) %></td>
+    49:                 <td>
+  
+app/views/admin/orders/show.html.erb:46:in `to_s'
+app/views/admin/orders/show.html.erb:46:in `block in _app_views_admin_orders_show_html_erb__3651856887006113439_70257679179700'
+app/views/admin/orders/show.html.erb:43:in `_app_views_admin_orders_show_html_erb__3651856887006113439_70257679179700'
+Started GET "/admin/orders.1" for 111.239.154.169 at 2020-12-03 09:44:50 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::OrdersController#index as 
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/admin/orders/index.html.erb:20
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admin/orders/index.html.erb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("order_products"."amount") FROM "order_products" WHERE "order_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admin/orders/index.html.erb:26
+  Rendered admin/orders/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 95ms (Views: 89.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:44:55 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (102.4ms)
+Completed 200 OK in 219ms (Views: 214.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:45:00 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太10", "last_name"=>"山10", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"true"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"sUjRPeq3jcYhQPbRUKNyCZQ3gFl5dAphSPV5e1Xf5fFt3/Av6v242xDofKS//Abn7MZTO3/DrZCO11EmmuMm9A==", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (3.1ms)[0m  [1m[33mUPDATE "customers" SET "is_deleted" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["is_deleted", 1], ["updated_at", "2020-12-03 09:45:00.195720"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 17ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:45:00 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:45:02 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:45:04 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:45:23 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太郎", "last_name"=>"山田", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"EgjRdzqbY8HU//HgBDbkGff6phBlJ4hekSoxmivDptHOn/BlOtFW3OVXe5XraZD3jwt1cmOQL69XCBnH5P9l1A==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.6ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "is_deleted" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太郎"], ["last_name", "山田"], ["is_deleted", 0], ["updated_at", "2020-12-03 09:45:23.027191"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 19ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:45:23 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:45:25 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:45:31 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:46:14 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"山田", "last_name"=>"太郎", "first_name_kana"=>"ヤマダ", "last_name_kana"=>"タロウ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"7Hf48qggZmep6Oa/cB6XKMgxR2Ru9KwCfmBgnUsvVAsw4NngqGpTephAbMqfQePGsMCUBmhDC/O4QkjAhBOXDg==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.4ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "first_name_kana" = ?, "last_name_kana" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "山田"], ["last_name", "太郎"], ["first_name_kana", "ヤマダ"], ["last_name_kana", "タロウ"], ["updated_at", "2020-12-03 09:46:14.177119"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 14ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:46:14 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:46:16 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:46:22 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 56.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:46:56 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太郎", "last_name"=>"山田", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"OyZX+3vshDgX/+QDFhgrUV6LXMYO1HPYpfbHHuSi7KfnsXbpe6axJSZXbnb5R1+/JnqPpAhj1Clj1O9DK54vog==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.4ms)[0m  [1m[33mUPDATE "customers" SET "first_name" = ?, "last_name" = ?, "first_name_kana" = ?, "last_name_kana" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["first_name", "太郎"], ["last_name", "山田"], ["first_name_kana", "タロウ"], ["last_name_kana", "ヤマダ"], ["updated_at", "2020-12-03 09:46:56.317563"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 18ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:46:56 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 58ms (Views: 57.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:46:59 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 71ms (Views: 69.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:47:01 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:47:03 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太郎", "last_name"=>"山田", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"true"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"CGiH8DRbSxIniuC8QumATLyBNmtpC1HBH1opnbTBYCfU/6biNBF+DxYiasmttvSixHDlCW+89jDZeAHAe/2jIg==", "id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.0ms)[0m  [1m[33mUPDATE "customers" SET "is_deleted" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["is_deleted", 1], ["updated_at", "2020-12-03 09:47:03.269547"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 15ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:47:03 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 56.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:47:05 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 73ms (Views: 70.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:47:07 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:47:09 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太郎", "last_name"=>"山田", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"true"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"CqvLcXgwAn69ycfYPbhkiXM4uQ3/zXOuvO4xxIyZC3jWPOpjeHo3Y4xhTa3S5xBnC8lqb/l61F96zBmZQ6XIfQ==", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:47:09 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:47:11 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1/edit" for 111.239.154.169 at 2020-12-03 09:47:12 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:31
+  Rendering admin/customers/edit.html.erb within layouts/application
+  Rendered admin/customers/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 75ms (Views: 72.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:47:14 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#update as HTML
+  Parameters: {"customer"=>{"first_name"=>"太郎", "last_name"=>"山田", "first_name_kana"=>"タロウ", "last_name_kana"=>"ヤマダ", "postal_code"=>"0011234", "address"=>"東京都渋谷区神南1-19-11 パークウェースクエア2 4階", "phone_number"=>"09011112222", "email"=>"aa@aa", "is_deleted"=>"false"}, "commit"=>"変更を保存する", "utf8"=>"✓", "authenticity_token"=>"OYG/1rRZ2h+KxniHypQUUfzn7mfylKDU7roBXIceZerlFp7EtBPvArtu8vIly2C/hBY9BfQjByUomCkBSCKm7w==", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[36mCustomer Update (2.4ms)[0m  [1m[33mUPDATE "customers" SET "is_deleted" = ?, "updated_at" = ? WHERE "customers"."id" = ?[0m  [["is_deleted", 0], ["updated_at", "2020-12-03 09:47:14.057482"], ["id", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:36
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/customers_controller.rb:36
+Redirected to https://c15847f2fd174d64a23a7e6407cb4de5.vfs.cloud9.us-east-1.amazonaws.com/admin/customers
+Completed 302 Found in 17ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:47:14 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers/1" for 111.239.154.169 at 2020-12-03 09:47:16 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/customers_controller.rb:27
+  Rendering admin/customers/show.html.erb within layouts/application
+  Rendered admin/customers/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/customers" for 111.239.154.169 at 2020-12-03 09:49:18 +0000
+Cannot render console from 111.239.154.169! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::CustomersController#index as HTML
+  Rendering admin/customers/index.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/views/admin/customers/index.html.erb:13
+  Rendered admin/customers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.1ms)
+
+
