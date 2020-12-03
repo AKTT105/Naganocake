@@ -19,6 +19,7 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @genre = Genre.find_by(id: @product.genre_id)
   end
 
   def edit
@@ -27,8 +28,11 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update(product_params)
-    redirect_to admin_product_path(@product)
+    if @product.update(product_params)
+      redirect_to admin_product_path(@product)
+    else
+      render "edit"
+    end
   end
 
   private
