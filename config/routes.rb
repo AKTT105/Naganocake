@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
   end
 
-
   devise_for :admin
   namespace :admin do
     get '' => 'homes#top'
