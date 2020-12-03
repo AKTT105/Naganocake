@@ -8,7 +8,7 @@
   
   <div class="row">
     <h4>購入者</h4>
-    <%= link_to admin_customers_path do %>
+    <%= link_to admin_customer_path(@customer) do %>
       <%= @customer.last_name %> <%= @customer.first_name %>
     <% end %>
     
@@ -60,7 +60,7 @@
     
     <div class="col-md-4">
       <h4>商品合計</h4>
-        <%= @order.total_price.to_s(:delimited) %>
+        <%= @order.order_total_price.to_s(:delimited) %>
       <h4>送料</h4>
       <%= @order.postage %>
       <h4>請求金額合計</h4>
