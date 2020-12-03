@@ -1,9 +1,9 @@
 <h2>商品編集</h2>
 
-<%= form_with model: @product, local: true do |f| %>
+<%= form_with model: @product, url: edit_admin_product_path, local: true do |f| %>
   <div class="field">
-    <%= f.label :image_id, "商品名" %>
-    <%= f.attachment_field :image_id %>
+    <%= f.label :image, "商品名" %>
+    <%= f.attachment_field :image %>
   </div>
   <div class="field">
     <%= f.label :name, "商品説明" %>
@@ -11,7 +11,7 @@
   </div>
   <div class="field">
     <%= f.label :genre_id, "ジャンル" %>
-    <%= f.collection_select(:genre_id, @genre, :id, :name) %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :price, "税抜価格" %>
