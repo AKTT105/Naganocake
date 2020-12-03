@@ -1,7 +1,7 @@
 <h2>商品詳細</h2>
 
 <div>
-  <%= attachment_image_tag(@product, :profile_image, :fill, 200, 200) %>
+  <%= attachment_image_tag(@product, :image, :fill, 200, 200) %>
 </div>
 
 <div>
@@ -20,6 +20,13 @@
         <tr><%= @product.genre_id %></tr>
       </td>
       <td>
+        <tr>税抜価格(税込価格)</tr>
+      </td>
+      <td>
+        <tr><%= @product.price %>
+        </tr>
+      </td>
+      <td>
         <tr>販売ステータス</tr>
         <tr><%= @product.is_active %></tr>
       </td>
@@ -28,5 +35,5 @@
 </div>
 
 <div>
-  <%= link_to "編集する", edit_admin_product(@product) %>
+  <%= link_to "編集する", edit_admin_product_path(@product) %>
 </div>
