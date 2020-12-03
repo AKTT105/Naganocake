@@ -46,7 +46,7 @@
        </tr>
       </table>
 
-      <%= link_to edit_admin_customer_path(@customer) do %>
+      <%= link_to edit_admin_customer_path(@customer), data: {"turbolinks" => false} do %>
         <span class="btn btn-info">編集する</span>
       <% end %>
 
