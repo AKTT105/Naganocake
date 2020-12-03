@@ -10788,3 +10788,50 @@ Completed 200 OK in 71ms (Views: 66.8ms | ActiveRecord: 1.3ms)
 
 
 >>>>>>> check
+Started GET "/admin/genres" for 219.167.58.192 at 2020-12-03 10:20:21 +0000
+Cannot render console from 219.167.58.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Admin::GenresController#index as HTML
+  Rendering admin/genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/genres/index.html.erb:27
+  Rendered admin/genres/index.html.erb within layouts/application (124.5ms)
+Completed 200 OK in 412ms (Views: 395.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/genres/1/edit" for 219.167.58.192 at 2020-12-03 10:20:26 +0000
+Cannot render console from 219.167.58.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::GenresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/genres_controller.rb:21
+  Rendering admin/genres/edit.html.erb within layouts/application
+  Rendered admin/genres/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 50ms (Views: 43.5ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/admin/genres/1" for 219.167.58.192 at 2020-12-03 10:20:28 +0000
+Cannot render console from 219.167.58.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::GenresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6VDApQfN2MVcUsvS7Wnqsp67lgOg7qnMJdyOXuHCnbyOBXRBlT4FSbR5FwuH4Mq6LOPwFLmyMz80vQOkCmHJ3Q==", "genre"=>{"name"=>"テスト", "is_active"=>"true"}, "commit"=>"変更を保存する", "id"=>"1"}
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/genres_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/genres_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/genres_controller.rb:33
+Redirected to https://c7fa09e17c7447e7b2743454ce799267.vfs.cloud9.us-east-1.amazonaws.com/admin/genres
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/genres" for 219.167.58.192 at 2020-12-03 10:20:28 +0000
+Cannot render console from 219.167.58.192! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::GenresController#index as HTML
+  Rendering admin/genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/admin/genres/index.html.erb:27
+  Rendered admin/genres/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.1ms)
+
+
