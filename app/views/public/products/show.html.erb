@@ -10,7 +10,7 @@
       <h3><%= @product.name %></h3>
       <%= @product.introduction %>
       <p><b>¥<%= @product.tax_on.to_s(:delimited) %></b><span>（税込）</span></p>
-      <%= form_with model: @cart_product, url: cart_products_path, local: true do |f| %>
+      <%= form_with(model: [@product,@cart_product], url: cart_products_path, local: true) do |f| %>
         <%= f.number_field :amount, min: 1, max: 10, placeholder: "個数選択" %>
         <%= f.submit "カートに入れる" %>
       <% end %>
