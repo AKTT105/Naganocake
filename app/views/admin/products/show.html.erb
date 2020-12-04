@@ -9,9 +9,8 @@
 
   <div classs="row">
     <div class="col-md-2 col-md-offset-2">
-      <%= attachment_image_tag(@product, :image, :fill, 150, 180, fallback: "no_image.png") %>
+      <%= attachment_image_tag(@product, :image, :fill, 150, 180, format: 'png', fallback: "no_image.png") %>
     </div>
-
     <div class="col-md-4">
       <table>
         <tbody>
