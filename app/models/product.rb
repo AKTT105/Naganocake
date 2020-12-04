@@ -11,4 +11,6 @@ class Product < ApplicationRecord
     @tax_on_price = self.price * 1.10
     @tax_on_price.floor
   end
+  
+  
 end
