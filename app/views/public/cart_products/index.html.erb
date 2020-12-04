@@ -12,20 +12,24 @@
                         <th></th>
                     </tr>
                 </thead>
-                <% @product.each do |product| %>
+                <% @cart_products.each do |cart_product| %>
                 <tbody>
                     <tr>
                         <td>
-                            <%= product. %>
+                            <%= attachment_image_tag(cart_product.product, :image, :fill, 50, 50) %>
+                            <%= cart_product.product.name %>
                         </td>
                         <td>
-                            <%= product. %>
+                            <%= cart_product.product.tax_on %>
                         </td>
                         <td>
-                            <%= product. %>
+                            <%= cart_product.amount %>
                         </td>
                         <td>
-                            <%= link_to "削除する", delivery_path(delivery), class:"btn btn-danger btn-md", method: :delete %>
+                            <%= cart_product.product.price %>
+                        </td>
+                        <td>
+                            <%= link_to "削除する", cart_product_path(cart_product), class:"btn btn-danger btn-md", method: :delete %>
                         </td>
                     </tr>
                 </tbody>
