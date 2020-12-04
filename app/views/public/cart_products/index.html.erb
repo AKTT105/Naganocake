@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <h4>ショッピングカート</h4>
+        <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>商品名</th>
+                        <th>単価（税込み）</th>
+                        <th>数量</th>
+                        <th>小計</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <% @product.each do |product| %>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= product. %>
+                        </td>
+                        <td>
+                            <%= product. %>
+                        </td>
+                        <td>
+                            <%= product. %>
+                        </td>
+                        <td>
+                            <%= link_to "削除する", delivery_path(delivery), class:"btn btn-danger btn-md", method: :delete %>
+                        </td>
+                    </tr>
+                </tbody>
+                <% end %>
+            </table>
+        </div>
+    </div>
+</div>
