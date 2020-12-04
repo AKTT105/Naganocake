@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :customers
   scope module: :public do
     root 'homes#top'
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
       patch 'customers/withdraw' => 'customers#withdraw'
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
   end
-
 
   devise_for :admin
   namespace :admin do
