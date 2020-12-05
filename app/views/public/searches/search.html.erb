@@ -10,9 +10,9 @@
       <% end %>
       <!--部分テンプレート？-->
         <% @products.each do |product| %>
-          <div class="pull-left">
+          <div class="pull-left mx-3">
             <%= link_to product_path(product) do %>
-              <%= attachment_image_tag(product, :image, :fill, 150, 180, fallback: "no_image.png") %><br />
+              <%= attachment_image_tag(product, :image, size: '150x180', fallback: "no_image.png") %><br />
               <%= product.name %><br />
             <% end %>
             ¥<%= product.tax_on.to_s(:delimited) %>
