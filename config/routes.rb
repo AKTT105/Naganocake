@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :customers
+  devise_for :customers, :controllers => {
+    :registrations => 'customers/registrations',
+    :sessions => 'customers/sessions',
+    :passwords => 'customers/passwords'
+  }
+
   scope module: :public do
     root 'homes#top'
+    get 'about' => 'homes#about'
     resources :products, only: [:index, :show]
     resources :cart_products, only: [:index, :update, :destroy, :create]
       delete 'cart_products/destroy_all' => 'cart_products#destroy_all'
@@ -16,7 +22,12 @@ Rails.application.routes.draw do
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
   end
 
-  devise_for :admin
+  devise_for :admin, :controllers => {
+    :registrations => 'admin/registrations',
+    :sessions => 'admin/sessions',
+    :passwords => 'admin/passwords'
+  }
+
   namespace :admin do
     get '' => 'homes#top'
     resources :products, only: [:index, :new, :create, :show, :edit, :update]

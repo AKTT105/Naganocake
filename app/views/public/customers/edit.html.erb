@@ -1,0 +1,44 @@
+<h3>登録情報編集</h3>
+
+<%= form_with model: @customer, url: customers_path, class: "form_horizontal" do |f| %>
+  <div class="form_group">
+    <label class="control-label col-md-2">名前</label>
+    <%= f.label :last_name, "(姓)" %>
+    <%= f.text_field :last_name, autofocus: true %>
+    <%= f.label :first_name, "(名)" %>
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="form_group">
+    <label class="control-label col-md-2">フリガナ</label>
+      <%= f.label :last_name_kana, "(セイ)" %>
+      <%= f.text_field :last_name_kana, autofocus: true %>
+      <%= f.label :first_name_kana, "(メイ)" %>
+      <%= f.text_field :first_name_kana, autofocus: true %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :email, "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="form_group">
+      <%= f.label :postal_code, "郵便番号(ハイフンなし)" %>
+      <%= f.text_field :postal_code, autofocus: true %>
+    </div>
+
+    <div class="form_group">
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address, autofocus: true %>
+    </div>
+
+    <div class="form_group">
+      <%= f.label :phone_number, "電話番号(ハイフンなし)" %>
+      <%= f.text_field :phone_number, autofocus: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "編集を保存する", class: "btn btn-success" %>
+    </div>
+  <% end %>
+  <%= link_to "退会する", customers_unsubscribe_path, class: "btn btn-danger" %>
