@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :customers
   scope module: :public do
     root 'homes#top'
+    get '/search' => 'searches#search', as: 'search'
     resources :products, only: [:index, :show]
     resources :cart_products, only: [:index, :update, :destroy, :create]
       delete 'cart_products/destroy_all' => 'cart_products#destroy_all'
