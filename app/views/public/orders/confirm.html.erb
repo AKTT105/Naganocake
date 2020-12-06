@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+    	<h3><mark>注文情報確認</mark></h3>
+        <%= form_with model: @order, url: orders_confirm_path(@order), local: true do |f| %>
+        <table class="active, table table-bordered">
+		<thead>
+			<tr class = "active">
+				<th>商品名</th>
+				<th>単価(税込)</th>
+				<th>数量</th>
+				<th>小計</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @order_products.each do |order_product| %>
+			<tr>
+				<td><%= order_product. %><%= order_product.name%></td>
+				<td><%= order_product.price.to_s(:delimited) %></td>
+				<td><%= order_product.amount %></td>
+				<td><%= order_product.total_price.to_s(:delimited) %></td>
+			</tr>
+			<% end %>
+		</tbody>
+		</table>
+		</div>
+
+    <div class="col-md-4">
+      <h4>商品合計</h4>
+      <%= @order.order_total_price.to_s(:delimited) %>
+      <h4>送料</h4>
+      <%= @order.postage %>
+      <h4>請求金額合計</h4>
+      <%= @order.total_pay.to_s(:delimited) %>
+    </div>
+
+
+
+
+  </div>
+</div>
+
