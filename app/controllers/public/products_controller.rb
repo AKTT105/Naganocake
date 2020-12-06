@@ -11,4 +11,11 @@ class Public::ProductsController < ApplicationController
     @cart_product = CartProduct.new
   end
   
+  def search
+    @genres = Genre.all
+    @value = params['value']
+    @genre = Genre.find_by(id: @value)
+    @products = Product.where(genre_id: @value) 
+  end
+  
 end
