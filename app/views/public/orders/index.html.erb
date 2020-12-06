@@ -1,5 +1,32 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-    <h3><mark>注文履歴詳細</mark></h3>
-    
+    <h3><mark>注文履歴一覧</mark></h3>
+            <%= form_with model: @order, url: orders_path(@order), local: true do |f| %>
+        <table class="active, table table-bordered">
+		<thead>
+			<tr>
+				<!--bootストラップで灰色にする-->
+				<th>注文日</th>
+				<th>配送先</th>
+				<th>注文商品</th>
+				<th>支払金額</th>
+				<th>ステータス</th>
+				<th>注文詳細</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @orders.each do |order| %>
+			<tr>
+				<td><%= order.image_id %><%= order.name %></td>
+				<td><%= order.price.to_s(:delimited) %></td>
+				<td><%= order.amount %></td>
+				<td><%= order.total_price.to_s(:delimited) %></td>
+				<td><%= order.making_status %></td>
+				<td><%= f.submit '確認画面に進む', class: 'btn btn-info' %></td>
+			</tr>
+			<% end %>
+		</tbody>
+		</table>
+		<% end %>
