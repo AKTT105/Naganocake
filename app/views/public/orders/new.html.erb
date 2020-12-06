@@ -3,7 +3,7 @@
         <div class="col-md-6">
     <h3><mark>注文情報入力</mark></h3>
     <h3>支払方法</h3>
-      <%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
+      <%= form_with model: @order, url: orders_confirm_path(@order), local: true do |f| %>
       <div>
         <%= f.radio_button :payment_type, :0 %>
         <%= f.label :payment_type, "クレジットカード", {value: :true, style: "display: inline-block;"} %>
@@ -12,13 +12,25 @@
         <%= f.radio_button :payment_type, :1 %>
         <%= f.label :payment_type, "銀行振込", {value: :false, style: "display: inline-block;"} %>
       </div>
+
     <h3>お届け先</h3>
       <div>
-        <%= f.radio_button :payment_type, :0 %>
-        <%= f.label :payment_type, "ご自身の住所", {value: :true, style: "display: inline-block;"} %>
-        
+        <%= f.radio_button :address, :0 %>
+        <%= f.label :address_type, "ご自身の住所", {value: :A, style: "display: inline-block;"} %>
+        〒<%= @order.postal_code.to_s.insert(3, "-") %><%= @order.address %><br>
+        <%= @order.name %>
       </div>
       <div>
-        <%= f.radio_button :payment_type, :1 %>
-        <%= f.label :payment_type, "登録済み住所", {value: :false, style: "display: inline-block;"} %>
+        <%= form_with model: @customer, url: customer_path(@customer), local: true do |f| %>
+        <%= f.radio_button :address, :1 %>
+        <%= f.label :address_type, "登録済み住所", {value: :B, style: "display: inline-block;"} %>
+        <% @customer_address.each do |customer_address| %>
+        <%= f.select :address [["",""]] %>
+        <% end %>
       </div>
+      <div>
+        <%= f.radio_button :address, :2 %>
+        <%= f.label :address_type, "新しいお届け先", {value: :C, style: "display: inline-block;"} %>
+        <%= @order.address %>
+      </div>
+      <div><%= f.submit '確認画面に進む', class: 'btn btn-info' %></div>
