@@ -1,0 +1,77 @@
+<h3>登録情報編集</h3>
+
+<div class="container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form-horizontal" }) do |f| %>
+  <%= render "customers/shared/error_messages", resource: resource %>
+  <div class="col-md-12">
+    <div class="form_group">
+      <label class="control-label col-md-2">名前</label>
+        <div class="col-md-3">
+          <%= f.label :last_name, "(姓)" %>
+          <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.label :first_name, "(名)"%>
+          <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form_group">
+      <label class="control-label col-md-2">フリガナ</label>
+      <%= f.label :last_name_kana, "(セイ)" %>
+      <div class="col-md-3">
+        <%= f.text_field :last_name_kana, autofocus: true, class: "form-control" %>
+      </div>
+      <%= f.label :first_name_kana, "(メイ)" %>
+      <div class="col-md-3">
+        <%= f.text_field :first_name_kana, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form_group">
+      <%= f.label :email, "メールアドレス", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form_group">
+      <%= f.label :postal_code, "郵便番号(ハイフンなし)", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :postal_code, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form_group">
+      <%= f.label :address, "住所", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :address, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form_group">
+      <%= f.label :phone_number, "電話番号(ハイフンなし)", class: "control-label col-md-2" %>
+      <div class="col-md-6">
+        <%= f.text_field :phone_number, autofocus: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+    <div class="actions">
+      <%= f.submit "編集を保存する", class: "btn btn-success" %>
+    </div>
+  <% end %>
+  <%= link_to "退会する", unsubscribe_customers_path, class: "btn btn-danger" %>
+
+
+  </div>
