@@ -15,10 +15,15 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :index, :show]
       post 'orders/confirm' => 'orders#confirm'
       get 'orders/done' => 'orders#done'
-    resource :customers, only: [:edit, :update]
-      get 'customers/my_page' => 'customers#show'
-      get 'customers/unsubscribe' => 'customers#unsubscribe'
-      patch 'customers/withdraw' => 'customers#withdraw'
+    resource :customers, only: [:edit, :update] do
+      collection do
+          get '/my_page' => 'customers#show'
+          get '/unsubscribe' => 'customers#unsubscribe'
+          patch '/withdraw' => 'customers#withdraw'
+        end
+      end
+
+
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
   end
 

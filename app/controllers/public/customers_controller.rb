@@ -1,11 +1,11 @@
 class Public::CustomersController < ApplicationController
 
   def show
-    @customer = Customer.find(current_customer)
+    @customer = Customer.find_by(id: current_customer)
   end
 
   def edit
-    @customer = Customer.find(current_customer)
+    @customer = Customer.find_by(id: current_customer)
   end
 
   def update
@@ -18,11 +18,11 @@ class Public::CustomersController < ApplicationController
   end
 
   def unsubscribe
-    @customer = Customer.find(params[:id])
+    @customer = Customer.find_by(id: current_customer)
   end
 
   def withdraw
-    @customer = Customer.find(params[:id])
+    @customer = Customer.find_by(id: current_customer)
     @customer.update(is_deleted: true)
     reset_session
     redirect_to root_path
