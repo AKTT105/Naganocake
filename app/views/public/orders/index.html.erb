@@ -1,12 +1,11 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md">
     <h3><mark>注文履歴一覧</mark></h3>
             <%= form_with model: @order, url: orders_path(@order), local: true do |f| %>
         <table class="active, table table-bordered">
 		<thead>
-			<tr>
-				<!--bootストラップで灰色にする-->
+			<tr class="active">
 				<th>注文日</th>
 				<th>配送先</th>
 				<th>注文商品</th>
@@ -19,12 +18,20 @@
 		<tbody>
 			<% @orders.each do |order| %>
 			<tr>
-				<td><%= order.image_id %><%= order.name %></td>
-				<td><%= order.price.to_s(:delimited) %></td>
-				<td><%= order.amount %></td>
-				<td><%= order.total_price.to_s(:delimited) %></td>
-				<td><%= order.making_status %></td>
-				<td><%= f.submit '確認画面に進む', class: 'btn btn-info' %></td>
+				<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+				<td>
+					<%= order.postal_code %></br>
+					<%= order.address %></br>
+					<%= order.name %>
+				</td>
+				<td>
+				<% order.order_products.each do |order_product| %>
+					<%= order_product.product.name %></br>
+				<% end %>
+				</td>
+				<td><%= order.total_payment %></td>
+				<td><%= order.status %></td>
+				<td><%= f.submit '確認画面に進む', data: {"turbolinks" => false}, class: 'btn btn-info' %></td>
 			</tr>
 			<% end %>
 		</tbody>

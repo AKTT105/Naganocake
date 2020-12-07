@@ -6,20 +6,34 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.where(customer_id: current_customer)
     @order_products = OrderProduct.where(order_id: @order)
-    @customer = Customer.find_by(id: @order.customer_id)
   end
 
   def new
-    @customer = Customer.find_by(id: @order.customer_id)
-    @customer_address = Customer.find_by(id: @order.customer_id)
+    @order = Order.new
+    @customer = current_customer
+    @customer_address = Delivery.where(customer_id: current_customer.id)
   end
 
   def confirm
+    binding.pry
+    @order = Order.where(customer_id: current_customer)
+    @order_products = OrderProduct.where(order_id: order_params)
+    @product =  Product.where(id: @order_products)
+    @current_customer_address = current_customer.address
+    @payment_type = current_customer.payment_type
+    #binding.pry
   end
 
   def create
+    @order = Order.new(order_params)
+    if @order.save
+      redirect_to confirm_orders_path
+    else
+      @orders = Order.all
+      render 'index'
+    end
   end
 
   def done

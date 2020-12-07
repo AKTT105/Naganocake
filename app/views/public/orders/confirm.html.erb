@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-8">
     	<h3><mark>注文情報確認</mark></h3>
-        <%= form_with model: @order, url: orders_confirm_path(@order), local: true do |f| %>
+        <%= form_with model: @order, url: done_orders_path(@order), method: :get, local: true do |f| %>
         <table class="active, table table-bordered">
 		<thead>
 			<tr class = "active">
@@ -16,7 +16,11 @@
 		<tbody>
 			<% @order_products.each do |order_product| %>
 			<tr>
-				<td><%= order_product. %><%= order_product.name%></td>
+				<td>
+					<%#= order_product.@product.image_id %>
+					<%#= attachment_image_tag(@product, :image_id, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+					<%= order_product.name %>
+				</td>
 				<td><%= order_product.price.to_s(:delimited) %></td>
 				<td><%= order_product.amount %></td>
 				<td><%= order_product.total_price.to_s(:delimited) %></td>
@@ -27,16 +31,38 @@
 		</div>
 
     <div class="col-md-4">
-      <h4>商品合計</h4>
-      <%= @order.order_total_price.to_s(:delimited) %>
-      <h4>送料</h4>
-      <%= @order.postage %>
-      <h4>請求金額合計</h4>
-      <%= @order.total_pay.to_s(:delimited) %>
-    </div>
+    	<tr>
+    		<th class="active">商品合計</th>
+    		<td><%= @order.order_total_price.to_s(:delimited) %></td>
+  		</tr>
+		<tr>
+    		<th class="active">送料</th>
+    		<td><%= @order.postage %></td>
+  		</tr>
+		<tr>
+    		<th class="active">請求金額合計</th>
+    		<td><%= @order.total_pay.to_s(:delimited) %></td>
+  		</tr>
 
-
-
+  		<tr>
+  			<h4>支払方法</h4>
+  			<% if @payment_type == "0" %>
+      			<%= クレジットカード %>
+    		<% else %>
+      			<%= 銀行振込 %>
+    		<% end %>
+  		</tr>
+  		<tr>
+  			<h4>お届け先</h4>
+			<% if @order.address == A %>
+      			<%= @current_customer_address %>
+    		<% elsif @order.address == B %>
+      			<%=  %>
+      		<% elsif @order.address == C %>
+      			<%=  %>
+    		<% end %>
+  		</tr>
+  		<% end %>
 
   </div>
 </div>
