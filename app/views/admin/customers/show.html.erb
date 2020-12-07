@@ -1,28 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-11">
+    <div class="col-xs-offset-1 col-xs-3">
       <table class="table">
-       <%= @customer.last_name %><%= @customer.first_name %>さんの会員情報詳細
+       <tr class="active">
+       <th><h4><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h4></th>
+       </tr>
+       </table>
+    </div>
+    <div class="col-xs-offset-1 col-xs-8">
+       <table class="table">
+       <tr class="active">
        <tr>
          <td>顧客ID</td>
          <td>
           <%= @customer.id %>
           <% if @customer.is_deleted == FALSE %>
-            <%= "有効会員"  %>
+            <span class="badge" style="background:#58aee0;">有効会員</span>
 		      <% else %>
-		        <%= "退会会員" %>
+		        <span class="badge" style="background:#d72238;">退会会員</span>
 		      <% end %>
          </td>
        </tr>
       
        <tr>
          <td>氏名</td>
-         <td><%= @customer.first_name %> <%= @customer.last_name %></td>
+         <td><%= @customer.last_name %> <%= @customer.first_name %></td>
        </tr>
 
        <tr>
          <td>フリガナ</td>
-         <td><%= @customer.first_name_kana %> <%= @customer.last_name_kana %></td>
+         <td><%= @customer.last_name_kana %> <%= @customer.first_name_kana %></td>
        </tr>
 
        <tr>
@@ -47,11 +54,11 @@
       </table>
 
       <%= link_to edit_admin_customer_path(@customer), data: {"turbolinks" => false} do %>
-        <span class="btn btn-info">編集する</span>
+        <span class="btn btn-primary">編集する</span>
       <% end %>
 
       <%= link_to admin_orders_path(@customer.id) do %>
-        <span class="btn btn-info">注文履歴一覧をみる</span>
+        <span class="btn btn-primary">注文履歴一覧を見る</span>
       <% end %>
     </div>
   </div>
