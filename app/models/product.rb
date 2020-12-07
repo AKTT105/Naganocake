@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :genre
   has_many :order_products, dependent: :destroy
+  has_many :cart_products, dependent: :destroy
 
   attachment :image
   validates :name, presence: true
@@ -11,4 +12,6 @@ class Product < ApplicationRecord
     @tax_on_price = self.price * 1.10
     @tax_on_price.floor
   end
+  
+  
 end
