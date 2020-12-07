@@ -1,14 +1,17 @@
 class Public::DeliveriesController < ApplicationController
     
   def index
-      @deliveries = Delivery.where(customer_id: current_customer)
-      @delivery = Delivery.new
+    @deliveries = Delivery.where(customer_id: current_customer)
+    @delivery = Delivery.new
   end
   
   def create
-      @delivery = Delivery.new(delivery_params)
+    @delivery = Delivery.new(delivery_params)
+    @customer = Customer.find_by(id: current_customer)
+    @delivery.customer_id = @customer.id
+    @deliveries = Delivery.where(customer_id: current_customer)
     if @delivery.save
-      flash[:notice] = "Signed in successfully."
+      flash[:notice] = ""
       redirect_to deliveries_path
     else
       flash[:notice] = "error"
@@ -21,9 +24,10 @@ class Public::DeliveriesController < ApplicationController
   end
   
   def update
-    @delivery = Delivery.find(params[:id])
-    if @delivery.update(delivery_params)
-      flash[:notice] = "You have updated user successfully."
+    #@delivery = Delivery.find(params[:id])
+    @deliveries = Delivery.where(customer_id: current_customer)
+    if @deliveries.update(delivery_params)
+      flash[:notice] = ""
       redirect_to deliveries_path
     else
       flash[:notice] = "error"
