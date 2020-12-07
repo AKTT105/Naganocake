@@ -1,22 +1,46 @@
 Rails.application.routes.draw do
 
-  devise_for :customers
+  devise_for :customers, :controllers => {
+    :registrations => 'customers/registrations',
+    :sessions => 'customers/sessions',
+    :passwords => 'customers/passwords'
+  }
+
   scope module: :public do
     root 'homes#top'
-    resources :products, only: [:index, :show]
-    resources :cart_products, only: [:index, :update, :destroy, :create]
-      delete 'cart_products/destroy_all' => 'cart_products#destroy_all'
-    resources :orders, only: [:new, :create, :index, :show]
-      post 'orders/confirm' => 'orders#confirm'
-      get 'orders/done' => 'orders#done'
-    resource :customers, only: [:edit, :update]
-      get 'customers/my_page' => 'customers#show'
-      get 'customers/unsubscribe' => 'customers#unsubscribe'
-      patch 'customers/withdraw' => 'customers#withdraw'
+    get 'about' => 'homes#about'
+    resources :products, only: [:index, :show] do
+      collection do
+        get 'search'
+      end
+    end
+    resources :cart_products, only: [:index, :update, :destroy, :create] do
+      collection do
+        delete 'destroy_all'
+      end
+    end
+    resources :orders, only: [:new, :create, :index, :show] do
+      collection do
+        get '/confirm' => 'orders#confirm'
+        get '/done' => 'orders#done'
+      end
+    end
+    resource :customers, only: [:edit, :update] do
+      collection do
+          get '/my_page' => 'customers#show'
+          get '/unsubscribe' => 'customers#unsubscribe'
+          patch '/withdraw' => 'customers#withdraw'
+        end
+      end
     resources :deliveries, only: [:index, :create, :destroy, :edit, :update]
   end
 
-  devise_for :admin
+  devise_for :admin, :controllers => {
+    :registrations => 'admin/registrations',
+    :sessions => 'admin/sessions',
+    :passwords => 'admin/passwords'
+  }
+
   namespace :admin do
     get '' => 'homes#top'
     resources :products, only: [:index, :new, :create, :show, :edit, :update]
