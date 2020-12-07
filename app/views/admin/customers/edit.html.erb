@@ -4,19 +4,20 @@
       <table class="table">
        <%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集
        <%= form_for(@customer, url:admin_customer_path, method: :patch) do |f| %>
-        <label>会員ID</label>
-        <%= @customer.id %>
-
+        <div class="form-group">
+          <label>会員ID</label>
+          <%= @customer.id %>
+        </div>
         <div class="form-group">
           <label>氏名</label>
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
           <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
         </div>
 
         <div class="form-group">
           <label>フリガナ</label>
-          <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
           <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana" %>
+          <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %>
         </div>
 
         <div class="form-group">
@@ -26,7 +27,7 @@
 
         <div class="form-group">
           <label>住所</label>
-          <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
+          <%= f.text_field :address, autofocus: true, autocomplete: "address", :size => "60*60" %>
         </div>
 
         <div class="form-group">
@@ -44,13 +45,14 @@
           <%= f.radio_button :is_deleted, false %>
           <%= f.label :is_deleted, "有効", {value: :false, style: "display: inline-block;"} %>
           <%= f.radio_button :is_deleted, true %>
-          <%= f.label :is_deleted, "退会済", {value: :true, style: "display: inline-block;"} %>
+          <%= f.label :is_deleted, "退会済み", {value: :true, style: "display: inline-block;"} %>
         </div>
 
         <div class="actions">
           <%= f.submit '変更を保存する' ,class: "btn btn-primary" %>
         </div>
        <% end %>
+      </table>
     </div>
   </div>
 </div>
