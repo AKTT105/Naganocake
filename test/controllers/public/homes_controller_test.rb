@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::ViewTest < ActiveSupport::TestCase
+class Public::HomesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
