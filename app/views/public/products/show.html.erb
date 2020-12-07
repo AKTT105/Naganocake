@@ -1,8 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <%= render 'public/genres/genre_search', genres: @genres %>
-    </div>
+    <%= render 'public/genres/genre_search', genres: @genres %>
     <div class="col-md-9">
       <div class="row">
         <div class="col-md-5">
@@ -16,14 +14,12 @@
       </div>
       <div class="row">
         <div class="pull-right">
-          <%= form_with(model: [@product,@cart_product], url: cart_products_path, local: true) do |f| %>
+          <%= form_with model: @cart_product, url: cart_products_path(product_id: @product.id), local: true do |f| %>
             <%= f.number_field :amount, min: 1, max: 10, placeholder: "個数選択" %>
             <%= f.submit "カートに入れる" %>
           <% end %>
         </div>
-
       </div>
-
     </div>
     <div class="col-md-6">
 

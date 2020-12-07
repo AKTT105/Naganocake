@@ -15,7 +15,7 @@ class Public::ProductsController < ApplicationController
     @genres = Genre.all
     @value = params['value']
     @genre = Genre.find_by(id: @value)
-    @products = Product.where(genre_id: @value, is_active: true) .page(params[:page]).per(8).reverse_order
+    @products = Product.where(genre_id: @value, is_active: true).page(params[:page]).per(8).reverse_order
   end
   
 end
