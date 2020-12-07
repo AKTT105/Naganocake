@@ -1,0 +1,21 @@
+// Place all the styles related to the public::homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-visual-background {
+  background-image: url(wood_toppage.jpg);
+  background-size: cover;
+  height: 250px;
+  position: relative;
+}
+
+.main-visual-content {
+  position: absolute;
+  top: 32%;
+  left: 19.5%;
+  background-color: #FFFFFF;
+}
+
+.col-md-3.recommend-products {
+
+}
