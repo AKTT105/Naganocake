@@ -1,29 +1,6 @@
-<mark>
+<div class="container">
   <h2>商品編集</h2>
-</mark>
-
-<%= form_with model: @product, url: admin_product_path(@product), local: true do |f| %>
-  <div class="field">
-    <%= f.label :image, "商品名" %>
-    <%= f.attachment_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :name, "商品説明" %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :genre_id, "ジャンル" %>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name) %>
-  </div>
-  <div class="field">
-    <%= f.label :price, "税抜価格" %>
-    <%= f.number_field :price %>円
-  </div>
-  <div class="field">
-    <%= f.label :is_active, "販売ステータス" %>
-    <%= f.select :is_active, [["販売中", true], ["販売中止", false]] %>
-  </div>
-  <div class="actions">
-    <%= f.submit "変更を保存" %>
-  </div>
-<% end %>
+  <%= form_with model: @product, url: admin_product_path(@product), local: true, class: "form-horizontal" do |f| %>
+    <% render "admin/products/form", f: f %>
+  <% end %>
+</div>
