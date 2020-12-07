@@ -1,36 +1,42 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md">
     <h3><mark>注文情報入力</mark></h3>
+    <%= form_with model: @order, url: confirm_orders_path, method: :get, local: true do |f| %>
     <h3>支払方法</h3>
-      <%= form_with model: @order, url: orders_confirm_path(@order), local: true do |f| %>
       <div>
-        <%= f.radio_button :payment_type, :0 %>
-        <%= f.label :payment_type, "クレジットカード", {value: :true, style: "display: inline-block;"} %>
+        <%= f.radio_button :payment_type, 1, checked: true %>
+        <%= f.label :payment_type, "クレジットカード", {value: 1, style: "display: inline-block;"} %>
       </div>
       <div>
-        <%= f.radio_button :payment_type, :1 %>
-        <%= f.label :payment_type, "銀行振込", {value: :false, style: "display: inline-block;"} %>
+        <%= f.radio_button :payment_type, 2 %>
+        <%= f.label :payment_type, "銀行振込", {value: 2, style: "display: inline-block;"} %>
       </div>
 
     <h3>お届け先</h3>
       <div>
-        <%= f.radio_button :address, :0 %>
-        <%= f.label :address_type, "ご自身の住所", {value: :A, style: "display: inline-block;"} %>
-        〒<%= @order.postal_code.to_s.insert(3, "-") %><%= @order.address %><br>
-        <%= @order.name %>
+        <%= f.radio_button :address_type, :A, checked: true %>
+        <%= f.label :address_type, "ご自身の住所", {value: :A, style: "display: inline-block;"} %><br>
+        〒<%= @customer.postal_code.to_s.insert(3, "-") %><%= @customer.address %><br>
+        <%= @customer.first_name %><%= @customer.last_name %>
       </div>
       <div>
-        <%= form_with model: @customer, url: customer_path(@customer), local: true do |f| %>
-        <%= f.radio_button :address, :1 %>
+        <%#= form_with model: @order, url: delivery_path, local: true do |f| %>
+        <%= f.radio_button :address_type, :B %>
         <%= f.label :address_type, "登録済み住所", {value: :B, style: "display: inline-block;"} %>
-        <% @customer_address.each do |customer_address| %>
-        <%= f.select :address [["",""]] %>
-        <% end %>
+        <%# @customer_address.each do |deliver| %>
+        <%= f.select :address,Delivery.addresses.keys.to_a %>
+        <%= f.select :address,Delivery.addresses.values.to_a %>
+        <%# end %>
+        <%# end %>
       </div>
       <div>
-        <%= f.radio_button :address, :2 %>
+        <%= f.radio_button :address_type, :C %>
         <%= f.label :address_type, "新しいお届け先", {value: :C, style: "display: inline-block;"} %>
-        <%= @order.address %>
+      </div>
+        郵便番号(ハイフンなし)<%= f.text_field :postal_code %><br>
+        住所<%= f.text_field :address, size: 30 %><br>
+        宛名<%= f.text_field :name %><br>
       </div>
       <div><%= f.submit '確認画面に進む', class: 'btn btn-info' %></div>
+      <% end %>
