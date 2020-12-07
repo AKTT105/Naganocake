@@ -1,14 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 col-md-offset-2">
-      <mark>
-        <h4>商品一覧</h4>
-      </mark>
+    <div class="col-md-10 col-md-offset-1">
+      <h4>商品一覧</h4>
 
-      <%= link_to "新規登録(仮)", new_admin_product_path %>
+      <%= link_to "＋", new_admin_product_path, class: "pull-right new_product_btn" %>
       <table class="table table-hover table-inverse">
         <thead>
-          <tr>
+          <tr class="active">
             <th>商品ID</th>
             <th>商品名</th>
             <th>税抜価格</th>
