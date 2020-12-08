@@ -31,39 +31,35 @@
 		</div>
 
     <div class="col-md-4">
-    	<tr>
-    		<th class="active">商品合計</th>
-    		<td><%= @order.order_total_price.to_s(:delimited) %></td>
-  		</tr>
-		<tr>
-    		<th class="active">送料</th>
-    		<td><%= @order.postage %></td>
-  		</tr>
-		<tr>
-    		<th class="active">請求金額合計</th>
-    		<td><%= @order.total_pay.to_s(:delimited) %></td>
-  		</tr>
+    	<table class="active, table table-bordered">
+		<thead>
+			<tr>
+				<th class="active">送料</th>
+    			<th><%= @order.postage %></th>
+			</tr>
+		</thead>
 
-  		<tr>
-  			<h4>支払方法</h4>
-  			<% if @payment_type == "0" %>
-      			<%= クレジットカード %>
-    		<% else %>
-      			<%= 銀行振込 %>
-    		<% end %>
-  		</tr>
-  		<tr>
-  			<h4>お届け先</h4>
-			<% if @order.address == A %>
-      			<%= @current_customer_address %>
-    		<% elsif @order.address == B %>
-      			<%=  %>
-      		<% elsif @order.address == C %>
-      			<%=  %>
-    		<% end %>
-  		</tr>
-  		<% end %>
+    		<tbody>
+			<tr>
+				<td class="active">商品合計</td>
+	    		<td><%= @order.order_total_price.to_s(:delimited) %></td>
+			</tr>
+			<tr>
+				<td class="active">請求金額</td>
+    			<td><%#= @order.total_pay.to_s(:delimited) %></td>
+			</tr>
+		</tbody>
+		</table>
 
+		<div class="row">
+      <div class="col-md-5">
+  			<p>支払方法</p>
+  			<%= @order.payment_type %>
+  			<p>お届け先</p>
+					<%= @order.postal_code %><%= @order.address %></br>
+      		<%= @order.name %>
+			<% end %>
+			</div>
   </div>
 </div>
 
