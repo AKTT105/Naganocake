@@ -1,12 +1,16 @@
 class Public::OrdersController < ApplicationController
 
   def index
-    @orders = Order.where(customer_id: current_customer)
+    @order = Order.where(customer_id: current_customer)
+    @orders = @order.all
   end
 
   def show
     @order = Order.where(customer_id: current_customer)
-    @order_products = OrderProduct.where(order_id: @order)
+    @orders = @order.all
+    @order_product = OrderProduct.where(order_id: @order)
+    @cart_products = current_customer.cart_products
+    #@product = Product.where[:order_product][:product_id]
   end
 
   def new
@@ -16,6 +20,7 @@ class Public::OrdersController < ApplicationController
 
   def confirm
     @order = Order.new(order_params)
+    @order_product = OrderProduct.new
     if params[:order][:address_type] == "A"
       #自分の登録済みの住所(ユーザーモデルの住所)
       @order.postal_code = current_customer.postal_code
@@ -30,22 +35,28 @@ class Public::OrdersController < ApplicationController
     elsif params[:order][:address_type] == "C"
       #ストロングパラメータから取る住所
     end
-    @order_products = OrderProduct.where(order_id: order_params)
-    @product =  Product.where(id: @order_products)
+    @cart_products = current_customer.cart_products
     @current_customer_address = current_customer.address
     @payment_type = @order.payment_type
-    #@order.payment_type == "1"
-      #put "クレジットカード"
-    #else
-      #put "銀行振込"
-    #end
-    #binding.pry
+    @order.postage = 800
   end
 
   def create
     @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
+    #@order_product = OrderProduct.new(order_product_params)
+    #binding.pry
     if @order.save
-      redirect_to confirm_orders_path
+      @cart_products = current_customer.cart_products
+      @cart_products.each do |cp|
+        order_product = @order.order_products.new
+        order_product.order_id = @order.id
+        order_product.product_id = cp.product_id
+        order_product.amount = cp.amount
+        order_product.price = cp.product.price
+        order_product.save
+      end
+      redirect_to done_orders_path
     else
       @orders = Order.all
       render 'index'
@@ -57,7 +68,11 @@ class Public::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:id,:customer_id,:postal_code,:address,:name,:total_payment,:payment_type,:status,:selected_address)
+    params.require(:order).permit(:id,:customer_id,:postal_code,:address,:name,:total_payment,:payment_type,:status,:selected_address,:postage)
   end
+
+  #def order_product_params
+    #params.require(:order_product).permit(:id,:price,:amount)
+  #end
 
 end

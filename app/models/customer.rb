@@ -10,7 +10,7 @@ class Customer < ApplicationRecord
 
   def cart_total_price
     total = 0
-    cart_products.each do |cart_product|
+    self.cart_products.each do |cart_product|
       total += cart_product.tax_on_price
     end
     total

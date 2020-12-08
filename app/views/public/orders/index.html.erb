@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md">
     <h3><mark>注文履歴一覧</mark></h3>
-            <%= form_with model: @order, url: orders_path(@order), local: true do |f| %>
+            <%#= form_with model: @order, url: orders_path, local: true do |f| %>
         <table class="active, table table-bordered">
 		<thead>
 			<tr class="active">
@@ -29,11 +29,10 @@
 					<%= order_product.product.name %></br>
 				<% end %>
 				</td>
-				<td><%= order.total_payment %></td>
+				<td><%= order.total_payment.to_s(:delimited) %>円</td>
 				<td><%= order.status %></td>
-				<td><%= f.submit '確認画面に進む', data: {"turbolinks" => false}, class: 'btn btn-info' %></td>
+				<td><%= link_to '表示する', order_path(@order), data: {"turbolinks" => false}, class: 'btn btn-info' %></td>
 			</tr>
 			<% end %>
 		</tbody>
 		</table>
-		<% end %>
