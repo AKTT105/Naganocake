@@ -13,7 +13,7 @@ class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer = current_customer
-    @customer_address = Delivery.where(customer_id: current_customer.id)
+    #@customer_address = Delivery.where(customer_id: current_customer.id)
   end
 
   def confirm
