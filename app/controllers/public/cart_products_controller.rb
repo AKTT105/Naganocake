@@ -1,7 +1,8 @@
 class Public::CartProductsController < ApplicationController
     
     def index
-      @cart_products = CartProduct.where(product_id: Product.ids)
+      @cart_products = CartProduct.where(product_id: Product.ids,customer_id: current_customer.id)
+      #binding.pry
       #@cart_product = CartProduct.find(params[:id])
       #@total_price = @cart_products.sum
     end
@@ -11,9 +12,10 @@ class Public::CartProductsController < ApplicationController
       @product = Product.find(params[:product_id])
       cart_product.product_id = @product.id
       customer = Customer.find_by(id: current_customer)
-      #binding.pry
+      
       cart_product.customer_id = customer.id
       if cart_product.save
+        
         redirect_to cart_products_path
       else
         @cart_product = CartProduct.new
