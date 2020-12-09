@@ -20,7 +20,7 @@
 			<tr>
 				<td>
 					<%#= order_product.@product.image_id %>
-					<%= attachment_image_tag(@product, :image_id, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+					<%#= attachment_image_tag(@product, :image_id, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
 					<%= cart_product.product.name %>
 				</td>
 				<td><%= cart_product.product.price.to_s(:delimited) %></td>

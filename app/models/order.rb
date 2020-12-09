@@ -30,11 +30,7 @@ class Order < ApplicationRecord
     order_products.to_a.sum{|order_product| order_product.total_price}
   end
 
-  def selected_address
-  end
-
   def total_pay
-    self.postage = 800
     self.total_payment = order_total_price + postage
   end
 
