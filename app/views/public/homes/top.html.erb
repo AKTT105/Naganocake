@@ -1,9 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-2">
-      <h3>ジャンル検索が入ります</h3>
-    </div>
-
+    <%= render 'public/genres/genre_search', genres: @genres %>
     <div class="col-md-10">
       <div class="row">
         <div class="col-md-8 main-visual-background">
@@ -20,21 +17,19 @@
       </div>
 
       <div class="row">
-        <div class="col-md-12">
-          <h3>オススメ商品</h3>
-          <div class="row">
-            <% @products.each do |product| %>
-              <div class="col-md-3 recommend-products">
-                <%= attachment_image_tag(product, :image, size: "150x100", fallback: "no_image.png") %>
-                <p><%= product.name %></p>
-                <p>¥<%= product.price %></p>
-              </div>
-            <% end %>
-          </div>
-          <div class="row">
-            <div class="col-md-offset-10">
-              <%= link_to "もっと見る>", products_path %>
+        <h3>オススメ商品</h3>
+        <div class="row">
+          <% @products.each do |product| %>
+            <div class="col-md-3 recommend-products">
+              <%= attachment_image_tag(product, :image, size: "180x140", fallback: "no_image.png") %>
+              <p><%= product.name %></p>
+              <p>¥<%= product.price.to_s(:delimited) %></p>
             </div>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-10">
+            <%= link_to "もっと見る>", products_path %>
           </div>
         </div>
       </div>

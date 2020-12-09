@@ -37,4 +37,5 @@ class Order < ApplicationRecord
     self.postage = 800
     self.total_payment = order_total_price + postage
   end
+
 end

@@ -8,13 +8,19 @@ class Public::CartProductsController < ApplicationController
     
     def create
       cart_product = CartProduct.new(cart_product_params)
-      product = Product.find(params[:product_id])
-      cart_product.product_id = product.id
+      @product = Product.find(params[:product_id])
+      cart_product.product_id = @product.id
       customer = Customer.find_by(id: current_customer)
       #binding.pry
       cart_product.customer_id = customer.id
-      cart_product.save
-      redirect_to cart_products_path
+      if cart_product.save
+        redirect_to cart_products_path
+      else
+        @cart_product = CartProduct.new
+        @genres = Genre.all
+        render template: "public/products/show"
+      #redirect_back(fallback_location: admin_product_path)
+      end
     end
     
     def update
