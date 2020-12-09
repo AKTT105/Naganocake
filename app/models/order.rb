@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   enum address_type: {
     ご自身の住所: :A,
     登録済み住所: :B,
-    新しいお届け先: :C,
+    新しいお届け先: :C
   }
 
 
