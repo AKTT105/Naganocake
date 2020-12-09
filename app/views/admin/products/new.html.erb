@@ -1,5 +1,6 @@
 <div class="container">
   <h4>商品新規登録</h4>
+
     <%= form_with model: @product, url: admin_products_path, class: "form-horizontal", local: true do |f| %>
       <% render "admin/products/form", f: f %>
     <% end %>

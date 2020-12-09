@@ -1,0 +1,25 @@
+<% cart_products.each do |cart_product| %>
+  <tbody>
+    <tr>
+      <td>
+        <%= attachment_image_tag cart_product.product, :image, fallback: "no_image.png", size:'50x50' %>
+        <%= cart_product.product.name %>
+      </td>
+      <td>
+        <%= cart_product.product.tax_on %>
+      </td>
+      <td>
+        <%= form_for cart_product do |f| %>
+        <%= f.number_field :amount, min: 1, max: 10 %>
+        <%= f.submit "変更", class: "btn btn-info" %>
+        <% end %>
+      </td>
+      <td>
+        <%= cart_product.tax_on_price %>
+      </td>
+      <td>
+        <%= link_to "削除する", cart_product_path(cart_product), class: "btn btn-danger btn-md", method: :delete %>
+      </td>
+    </tr>
+  </tbody>
+<% end %>
