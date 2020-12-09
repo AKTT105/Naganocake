@@ -1,35 +1,46 @@
 <div class="container">
-  <h4>商品詳細</h4>
+  <div class="row">
+    <h4 class="header-background col-md-2 col-md-offset-2">商品詳細</h4>
+  </div>
 
   <div classs="row">
     <div class="col-md-2 col-md-offset-1">
-      <%= attachment_image_tag(@product, :image, size: "160x120", fallback: "no_image.png") %>
+      <%= attachment_image_tag(@product, :image, size: '170x130', fallback: "no_image.png") %>
     </div>
 
     <div class="col-md-7 col-md-offset-1">
-      <p>商品名&emsp;&emsp;
-        <strong><%= @product.name %></strong>
-      </p>
-      <p>商品説明&emsp;&emsp;
-        <strong><%= @product.introduction %></strong>
-      </p>
-      <p>ジャンル&emsp;&emsp;
-        <strong><%= @genre.name %></strong>
-      </p>
-      <p>税込価格(税抜価格)&emsp;&emsp;
-        <strong>
-          <%= @product.tax_on %>
-          (<%= @product.price %>)円
-        </strong>
-      </p>
-      <p>販売ステータス&emsp;&emsp;
-        <% if @product.is_active == true %>
-          <%= "販売中" %>
-        <% else %>
-          <%= "販売中止" %>
-        <% end %>
-      </p>
-    </div>
+      <table>
+      <tr class="row">
+        <th class="col-md-4">商品名</th>
+        <td class="col-md-8"><%= @product.name %></td>
+      </tr>
+      <tr class="row table-lign">
+        <th class="col-md-4">商品説明</th>
+        <td class="col-md-8"><%= @product.introduction %></td>
+      </tr>
+      <tr class="row">
+        <th class="col-md-4">ジャンル</th>
+        <td class="col-md-8"><%= @genre.name %></td>
+      </tr>
+      <tr class="row">
+        <th class="col-md-4">税込価格(税抜価格)</th>
+          <td class="col-md-8">
+            <%= @product.tax_on %>
+            (<%= @product.price %>)円
+          </td>
+        </th>
+      </tr>
+      <tr class="row">
+        <th class="col-md-4">販売ステータス</th>
+        <td class="col-md-8">
+          <% if @product.is_active == true %>
+            <%= "販売中" %>
+          <% else %>
+            <%= "販売中止" %>
+          <% end %>
+        </td>
+      </tr>
+    </table>
 
     <button class="btn btn-info pull-right btn-lg">
       <%= link_to "編集する", edit_admin_product_path(@product) %>
