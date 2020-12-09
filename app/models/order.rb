@@ -32,4 +32,5 @@ class Order < ApplicationRecord
   def total_pay
     self.total_payment = order_total_price + postage
   end
+
 end
