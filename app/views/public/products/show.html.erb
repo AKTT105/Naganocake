@@ -2,21 +2,21 @@
   <div class="row">
     <%= render 'public/genres/genre_search', genres: @genres %>
     <div class="col-md-9">
-      <div class="row">
+      <div class="row product">
         <div class="col-md-5">
-          <%= attachment_image_tag(@product, :image,  size: '320x320', fallback: "no_image.png") %>
+          <%= attachment_image_tag(@product, :image,  size: '350x300', fallback: "no_image.png") %>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 product-info">
           <h3><%= @product.name %></h3>
-          <%= @product.introduction %>
-          <p><b>¥<%= @product.tax_on.to_s(:delimited) %></b><span>（税込）</span></p>
+          <p><%= @product.introduction %></p>
+          <p><span style="font-size:25px;">¥ <%= @product.tax_on.to_s(:delimited) %></span>（税込）</p>
         </div>
       </div>
       <div class="row">
-        <div class="pull-right">
+        <div class="col-md-5 col-md-offset-7">
           <%= form_with model: @cart_product, url: cart_products_path(product_id: @product.id), local: true do |f| %>
-            <%= f.number_field :amount, min: 1, max: 10, placeholder: "個数選択" %>
-            <%= f.submit "カートに入れる" %>
+            <%= f.select :amount, [ ["1"], ["2"], ["3"] ,["4"], ["5"], ["6"], ["7"], ["8"], ["9"], ["10"] ], prompt: "個数選択" %>
+            <%= f.submit "カートに入れる", class:"btn btn-info" %>
           <% end %>
         </div>
       </div>

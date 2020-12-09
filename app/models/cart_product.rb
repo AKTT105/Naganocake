@@ -3,6 +3,8 @@ class CartProduct < ApplicationRecord
     #belongs_to :customer
     belongs_to :product
     
+    validates :amount, presence: true
+    
     def tax_on_price
       @product = product.price * 1.10 * amount
       @product.floor

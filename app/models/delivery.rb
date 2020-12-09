@@ -11,3 +11,4 @@ class Delivery < ApplicationRecord
   end
 
 end
+
