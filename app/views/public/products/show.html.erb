@@ -1,0 +1,32 @@
+<div class="row">
+  <%= render 'public/genres/genre_search', genres: @genres %>
+  <div class="col-md-9">
+    <div class="row product">
+      <div class="col-md-5">
+        <%= attachment_image_tag(@product, :image,  size: '350x300', fallback: "no_image.png") %>
+      </div>
+      <div class="col-md-6 product-info">
+        <h3><%= @product.name %></h3>
+        <p><%= @product.introduction %></p>
+        <p><span style="font-size:25px;">¥ <%= @product.tax_on.to_s(:delimited) %></span>（税込）</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5 col-md-offset-7">
+        <% if customer_signed_in? %>
+          <%= form_with model: @cart_product, url: cart_products_path(product_id: @product.id), local: true do |f| %>
+            <%= f.select :amount, [ ["1"], ["2"], ["3"] ,["4"], ["5"], ["6"], ["7"], ["8"], ["9"], ["10"] ], prompt: "個数選択" %>
+            <%= f.submit "カートに入れる", class:"btn btn-info" %>
+          <% end %>
+        <% else %>
+          <p>登録済みの方はこちらから 
+            <span><%= link_to "ログイン", new_customer_session_path %></span>
+          </p>
+          <p>会員登録はこちらから 
+            <span><%= link_to "新規登録", new_customer_registration_path %></span>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

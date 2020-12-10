@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.header-background {
+  background-color: #e6e6fa;
+  text-align: center;
+}
+
+header {
+  height: 120px;
+  margin: 10px 10px 0 10px;
+  border: 1px solid gray;
+}
+.logo {
+  padding-top: 20px;
+  padding-left: 120px;
+}
+.links {
+  margin-top: 35px;
+}
+.links li {
+  margin: 0 20px;
+  border: 1px solid gray;
+  border-radius: 10%
+}
+#customer-name {
+  border: none;
+  line-height: 50px;
+}
+//妻夫木追加(表の枠線なし)
+.table-noborder {
+  border-top-style: 0;
+  border-bottom-style: 0;
+}
+//妻夫木追加(サンクスメッセージの位置調整)
+.done {
+  padding-top: 200px;
+}
+//妻夫木追加(注文履歴詳細の一覧に戻るボタンの位置調整)
+.link-order-index {
+  padding-top: 50px;
+}
