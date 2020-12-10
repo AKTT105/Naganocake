@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h4>商品一覧</h4>
+    <%= link_to "＋", new_admin_product_path, class: "pull-right new_product_btn" %>
+    <div class="product_list">
+      <%= render "admin/products/product_list", products: @products %>
+    </div>
+  </div>
+</div>
