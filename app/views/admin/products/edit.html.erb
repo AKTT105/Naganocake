@@ -1,6 +1,4 @@
-<div class="container">
-  <h2>商品編集</h2>
-  <%= form_with model: @product, url: admin_product_path(@product), local: true, class: "form-horizontal" do |f| %>
-    <% render "admin/products/form", f: f %>
-  <% end %>
-</div>
+<h2>商品編集</h2>
+<%= form_with model: @product, url: admin_product_path(@product), local: true, class: "form-horizontal" do |f| %>
+  <% render "admin/products/form", f: f %>
+<% end %>
