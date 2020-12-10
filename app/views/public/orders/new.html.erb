@@ -1,0 +1,49 @@
+  <div class="row">
+    <h3 class="header-background col-md-3">注文情報入力</h3>
+  </div>
+      <%= form_with model: @order, url: confirm_orders_path, local: true do |f| %>
+  <div class="row">
+    <div class="col-md-12">
+    <h3>支払方法</h3>
+      <div class="col-md-12">
+        <div>
+          <%= f.radio_button :payment_type, 'クレジットカード', checked: true %>
+          <%= f.label :payment_type, "クレジットカード", {value: "クレジットカード", style: "display: inline-block;"} %>
+        </div>
+        <div>
+          <%= f.radio_button :payment_type, '銀行振込' %>
+          <%= f.label :payment_type, "銀行振込", {value: "銀行振込", style: "display: inline-block;"} %>
+        </div>
+      </div>
+    </div>
+​
+  <div class="col-md-12">
+    <h3>お届け先</h3>
+      <div class="col-md-12">
+        <%= f.radio_button :address_type, :A, checked: true %>
+        <%= f.label :address_type, "ご自身の住所", {value: :A, style: "display: inline-block;"} %><br>
+          <div class="col-md-12">
+            〒<%= @customer.postal_code.to_s.insert(3, "-") %>　<%= @customer.address %><br>
+            <%= @customer.last_name %><%= @customer.first_name %>
+          </div>
+      </div>
+      <div class="col-md-12">
+        <%= f.radio_button :address_type, :B %>
+        <%= f.label :address_type, "登録済み住所", {value: :B, style: "display: inline-block;"} %></br>
+          <div class="col-md-12">
+            <%= f.collection_select :selected_address, @customer.deliveries, :id, :delivery_info %>
+          </div>
+      </div>
+
+      <div class="col-md-12">
+        <%= f.radio_button :address_type, :C %>
+        <%= f.label :address_type, "新しいお届け先", {value: :C, style: "display: inline-block;"} %></br>
+          <div class="col-md-12">
+            郵便番号(ハイフンなし)<%= f.text_field :postal_code %><br>
+            住所<%= f.text_field :address, size: 60 %><br>
+            宛名<%= f.text_field :name %><br>
+          </div>
+      </div>
+      <div class="text-center"><%= f.submit '確認画面に進む', class: 'btn btn-info' %></div>
+    <% end %>
+  </div>
