@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 
   has_many :order_products, dependent: :destroy
   attachment :product
-
+  
   enum payment_type: {
     クレジットカード: 1,
     銀行振込:         2
