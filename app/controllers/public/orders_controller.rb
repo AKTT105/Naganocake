@@ -1,4 +1,5 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
 
   def index
     @order = Order.where(customer_id: current_customer)
@@ -6,11 +7,9 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.where(customer_id: current_customer)
-    @orders = @order.all
-    @order_product = OrderProduct.where(order_id: @order)
-    @cart_products = current_customer.cart_products
-    #@product = Product.where[:order_product][:product_id]
+    #binding.pry
+    @order = Order.find(params[:id])
+    @order_products = @order.order_products
   end
 
   def new
@@ -44,7 +43,6 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
-    #@order_product = OrderProduct.new(order_product_params)
     #binding.pry
     if @order.save
       @cart_products = current_customer.cart_products
@@ -56,23 +54,31 @@ class Public::OrdersController < ApplicationController
         order_product.price = cp.product.price
         order_product.save
       end
+      @order.update(status: "入金待ち")
+      #レコードの重複しているかを確認する
+      unless current_customer.deliveries.find_by(postal_code: @order.postal_code, address: @order.address, name: @order.name).present?
+        @delivery = Delivery.new
+        @delivery.customer_id = current_customer.id
+        @delivery.postal_code = @order.postal_code
+        @delivery.address = @order.address
+        @delivery.name = @order.name
+        @delivery.save
+      end
       redirect_to done_orders_path
     else
       @orders = Order.all
-      render 'index'
+      render 'confirm'
     end
   end
 
   def done
+    cart_products = current_customer.cart_products.all
+    cart_products.destroy_all
   end
 
   private
   def order_params
     params.require(:order).permit(:id,:customer_id,:postal_code,:address,:name,:total_payment,:payment_type,:status,:selected_address,:postage)
   end
-
-  #def order_product_params
-    #params.require(:order_product).permit(:id,:price,:amount)
-  #end
 
 end
