@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    
+
     <header>
       <div class="container-fluid">
         <div class="row">
@@ -36,20 +36,22 @@
                 <li><%= link_to "商品一覧", products_path %></li>
                 <li><%= link_to "新規登録", new_customer_registration_path %></li>
                 <li><%= link_to "ログイン", new_customer_session_path %></li>
-              <% end %>  
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
     </header>
 
-    <%= yield %>
-    
+    <div class="container">
+      <%= yield %>
+    </div>
+
     <footer>
       <div class="container">
         <div class="row"></div>
-      </div>  
+      </div>
     </footer>
-    
+
   </body>
 </html>

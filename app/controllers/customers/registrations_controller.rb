@@ -24,6 +24,10 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def after_update_path_for(resource)
+    my_page_customers_path
+  end
+
   # DELETE /resource
   # def destroy
   #   super
@@ -38,7 +42,11 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def update_resource(resource, params)
+    resource.update_without_current_password(params)
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
