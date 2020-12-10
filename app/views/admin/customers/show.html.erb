@@ -52,7 +52,7 @@
         <span class="btn btn-primary">編集する</span>
       <% end %>
 
-      <%= link_to admin_orders_path(@customer.id) do %>
+      <%= link_to admin_orders_path(customer_id: @customer.id) do %>
         <span class="btn btn-primary">注文履歴一覧を見る</span>
       <% end %>
     </div>
