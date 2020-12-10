@@ -1,4 +1,3 @@
-<div class="container">
   <div class="row">
     <div class="col-xs-offset-1 col-xs-3">
        <h4 class="header-background"><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h4>
@@ -53,9 +52,8 @@
         <span class="btn btn-primary">編集する</span>
       <% end %>
 
-      <%= link_to admin_orders_path(@customer.id) do %>
+      <%= link_to admin_orders_path(customer_id: @customer.id) do %>
         <span class="btn btn-primary">注文履歴一覧を見る</span>
       <% end %>
     </div>
   </div>
-</div>
