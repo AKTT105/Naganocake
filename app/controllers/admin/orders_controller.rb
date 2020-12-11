@@ -3,12 +3,12 @@ class Admin::OrdersController < ApplicationController
     def index
       path = Rails.application.routes.recognize_path(request.referer)
       if path[:controller] == "admin/homes" && path[:action] == "top"
-        @orders = Order.where(created_at: Date.today.all_day).page(params[:page]).reverse_order
+        @orders = Order.where(created_at: Date.today.all_day).page(params[:page]).per(10).reverse_order
       elsif path[:controller] == "admin/customers" && path[:action] == "show" && params.has_key?(:customer_id)
         customer = Customer.find(params[:customer_id])
-        @orders = customer.orders.page(params[:page]).reverse_order
+        @orders = customer.orders.page(params[:page]).per(10).reverse_order
       else 
-        @orders = Order.page(params[:page]).reverse_order
+        @orders = Order.page(params[:page]).per(10).reverse_order
       end
     end
     
