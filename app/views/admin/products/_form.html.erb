@@ -1,5 +1,6 @@
 <div class="col-md-2">
   <div class="form_group">
+    <%= attachment_image_tag product, :image, fallback: "no_image.png", class: "img_prev", style: "height: 250px; width:300px;" %>
     <%= f.attachment_field :image %>
   </div>
 </div>

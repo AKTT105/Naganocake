@@ -16,3 +16,24 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+/* global $*/
+//"turbolinks:load" => 初回読み込み、リロード、ページ切り替えで動く。
+$(document).on("turbolinks:load", function(){
+  function readURL(input) {
+    // ファイルが1つ読み込まれた場合
+    if(input.files && input.files[0]){
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        // class="imag_prev"にsrc属性を追加
+        $('.img_prev').attr('src', e.target.result);
+      }
+      // ファイルの中身を読み込む
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  // Productのimageの中身を変換
+  $("#product_image").change(function(){
+    readURL(this);
+  });
+});
