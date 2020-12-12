@@ -3,6 +3,7 @@
   <h4 class="header-background col-md-7">会員の方はこちらからログイン</h4>
   </div>
 </div>
+<%= flash[:error] %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "row form_horizontal" }) do |f| %>
     <div class="form_group col-md-7 col-md-offset-3">
       <div class="row">
