@@ -22,9 +22,8 @@
 }
 
 header {
-  height: 120px;
-  background-color: #ffb6b9
-;
+  height: 150px;
+  background-color: #ffb6b9;
 }
 
 header a {
@@ -32,11 +31,11 @@ header a {
 }
 
 .logo {
-
+  margin-top: 10px;
 }
 
 .links {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 .links li:not(#customer-name){
   margin: 0 20px;
@@ -63,4 +62,23 @@ header a {
 //妻夫木追加(注文履歴詳細の一覧に戻るボタンの位置調整)
 .link-order-index {
   padding-top: 50px;
+}
+.search-form {
+  margin-right: 5px;
+}
+.search-btn {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  font-weight: normal;
+  background-color: #F5F3E9;
+  border: 1px solid transparent;
+  text-align: center;
+  border-radius: 10%;
+}
+
+input[type="text"] {
+  border: 2px solid #5d1b1d;
+  width: 200px;
+  height: 35px;
 }
