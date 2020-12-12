@@ -20,7 +20,6 @@
   background-color: #e6e6fa;
   text-align: center;
 }
-
 header {
   height: 120px;
   margin: 10px 10px 0 10px;
@@ -47,9 +46,10 @@ header {
   border-top-style: 0;
   border-bottom-style: 0;
 }
-//妻夫木追加(サンクスメッセージの位置調整)
-.done {
-  padding-top: 200px;
+
+//妻夫木追加(Adminジャンル一覧の位置調整)
+.genre-index {
+  margin-left: 2000px;
 }
 //妻夫木追加(注文履歴詳細の一覧に戻るボタンの位置調整)
 .link-order-index {
