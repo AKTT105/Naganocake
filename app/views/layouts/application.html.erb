@@ -46,15 +46,14 @@
               <div class="row">
                 <div class="pull-right search-form">
                   <div class="input-group">
-                    <%= form_with url: root_path, method: :get, local: true do |f| %>
-                      <%= f.select 'search[model]', options_for_select({ "会員" => "customer", "商品" => "product" }) %>
+                    <%= form_with url: admin_search_path, method: :get, local: true do |f| %>
+                      <%= f.select :model, options_for_select({ "会員" => "customer", "商品" => "product" }) %>
                       <%= f.text_field :keyward, placeholder: "Search" %>
                       <%= button_tag( class: "search-btn") do %>
                         <%= content_tag :span, "", class: "glyphicon glyphicon-search" %>
                       <% end %>
                     <% end %>                    
                   </div>
-
                 </div>
               </div>
             <% end %>
