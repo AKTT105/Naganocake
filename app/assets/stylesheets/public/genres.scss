@@ -4,18 +4,19 @@
 
 .search-table {
   margin-top: 40px;
+  padding: 10px;
   border: 1px solid gray;
 }
 .search-table thead {
   border-bottom: 1px solid gray;
 }
-
 .search-table th {
   font-size: 18px;
-  padding: 3px 50px;
+  padding: 3px 45px;
 }
-
 .genre-item {
+  display: block;
   color: black;
-  padding-left: 15px;
+  padding-left: 60px;
+  margin: 7px 0;
 }
