@@ -1,10 +1,10 @@
 <div class="row">
 	<h3 class="header-background col-md-3">ジャンル一覧・追加</h3>
-	<%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
 </div>
 <div class="row">
 	<div class="col-md-6" >
     	<div>
+    			<%= form_with model: @genre, url: admin_genres_path, local: true do |f| %>
 	        <%= f.label :ジャンル %>
 	        <%= f.text_field :name, class: 'genre_name' %>
 	        <%= f.radio_button :is_active, :true %>

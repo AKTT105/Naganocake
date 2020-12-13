@@ -3,7 +3,7 @@
   <div class="col-md-9">
     <div class="row product">
       <div class="col-md-3">
-         <h3><%= @genre.name %>一覧</h3>
+         <h3 class="header-background"><%= @genre.name %>一覧</h3>
       </div>
     </div>
     <% if @products.empty? %>
@@ -15,6 +15,6 @@
 </div>
 <div class="row">
   <div class="col-md-3 col-md-offset-6">
-    <%= paginate @products %>         
+    <%= paginate @products %>
   </div>
 </div>

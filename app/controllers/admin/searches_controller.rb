@@ -20,7 +20,7 @@ class Admin::SearchesController < ApplicationController
         @products = Product.page(params[:page]).per(10).reverse_order
       else
         @title = '商品'
-        @products = Product.where("name LIKE?", "%#{keyward}%").page(params[:page]).per(10).reverse_order
+        @products = Product.where("name LIKE?", "%#{@keyward}%").page(params[:page]).per(10).reverse_order
       end
     end
   end
