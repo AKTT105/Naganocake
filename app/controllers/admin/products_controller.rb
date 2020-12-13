@@ -18,7 +18,7 @@ class Admin::ProductsController < ApplicationController
     if @product.save
       redirect_to admin_product_path(@product)
     else
-      render "new"
+      redirect_back(fallback_location: root_path)
     end
   end
 
