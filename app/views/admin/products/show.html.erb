@@ -1,14 +1,14 @@
 <div class="row">
-  <h4 class="header-background col-md-2 col-md-offset-2">商品詳細</h4>
+  <h3 class="header-background col-md-2 col-md-offset-2">商品詳細</h3>
 </div>
 
 <div classs="row">
   <div class="col-md-2 col-md-offset-1">
-    <%= attachment_image_tag(@product, :image, size: '170x130', fallback: "no_image.png") %>
+    <%= attachment_image_tag(@product, :image, size: '170x130', fallback: "no_image.png", class: "product-detail") %>
   </div>
 
   <div class="col-md-7 col-md-offset-1">
-    <table>
+    <table class="table">
     <tr class="row">
       <th class="col-md-4">商品名</th>
       <td class="col-md-8"><%= @product.name %></td>

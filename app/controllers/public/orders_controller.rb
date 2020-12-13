@@ -17,6 +17,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
+    # binding.pry
     @order = Order.new(order_params)
     @order_product = OrderProduct.new
     if params[:order][:address_type] == "A"

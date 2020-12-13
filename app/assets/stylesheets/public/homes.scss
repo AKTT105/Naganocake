@@ -3,22 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main-visual-background {
-  background-image: url(img/nagano-top.jpg);
-  background-size: cover;
+  background-color: #fae3d9;
   height: 250px;
   position: relative;
 }
 
 .main-visual-content {
   position: absolute;
-  top: 25%;
-  left: 19%;
-  height: 100px;
-  background-color: rgba(224,255,255,0.65);
-  border-radius: 1em;
+  border: solid 5px;
+  border-color: #ffffff;
+  top: 10%;
+  left: 12%;
+  height: 200px;
+  width: 400px;
 }
 
-h1 {
+.main-visual-content-text {
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  color: #5d1b1d;
+  text-align: center;
+  line-height: 2em;
+}
+
+.about-top{
   text-align: center;
 }
 
