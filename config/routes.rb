@@ -43,6 +43,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '' => 'homes#top'
+    get 'search' => 'searches#search'
     resources :products, only: [:index, :new, :create, :show, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :update]
