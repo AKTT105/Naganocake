@@ -101,9 +101,9 @@ Product.create!([{
   },
   {
   id: '7',
-  genre_id: '4',
+  genre_id: '1',
   name: '八方尾根の粉雪',
-  introduction: '八方尾根に降り積もる雪をイメージしたキャンディです。ホワイトデーにもおすすめです。',
+  introduction: '八方尾根に降り積もる雪をイメージしたケーキです。ホワイトデーにもおすすめです。',
   price: '300',
   is_active: 'TRUE',
   },
@@ -117,7 +117,7 @@ Product.create!([{
   },
   {
   id: '9',
-  genre_id: '2',
+  genre_id: '3',
   name: '小諸の蕎麦粉クッキー',
   introduction: '小諸産の蕎麦を使ったクッキーです。蕎麦の風味が甘さとマッチしたハーモニーをお楽しみください。',
   price: '350',
@@ -133,7 +133,7 @@ Product.create!([{
   },
   {
   id: '11',
-  genre_id: '1',
+  genre_id: '2',
   name: '妻籠宿プリン',
   introduction: '栗を使用したプリンです。栗きんとんが有名な岐阜・長野間を彷彿とさせます。',
   price: '700',
@@ -141,7 +141,7 @@ Product.create!([{
   },
   {
   id: '12',
-  genre_id: '1',
+  genre_id: '4',
   name: '善光寺参りの千歳飴',
   introduction: '期間限定だった善光寺参りの千歳飴が、定番商品になりました。',
   price: '300',
