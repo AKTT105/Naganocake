@@ -4,16 +4,25 @@
 
 .search-table {
   margin-top: 40px;
-  border: 1px solid gray;
+  padding: 10px;
+
 }
 .search-table thead {
-  border-bottom: 1px solid gray;
+  color: #5d1b1d;
+  background-color: #F5F3E9;
+  border: 1px solid #D2B48C;
 }
-
 .search-table th {
-  font-size: 18px;
-  padding: 3px 50px;
+  font-size: 15px;
+  padding: 10px 45px;
+}
+.search-table tbody {
+  border: 1px solid #D2B48C;
+  border-top: none;
 }
 .genre-item {
-  margin: 30pxx;
+  display: block;
+  color: #5d1b1d;
+  text-align: center;
+  margin: 13px 0;
 }
