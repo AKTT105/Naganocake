@@ -1,8 +1,8 @@
 class Public::ProductsController < ApplicationController
 
   def index
-    @products = Product.where(is_active: true).page(params[:page]).per(8).reverse_order
     @genres = Genre.where(is_active: true)
+    @products = Product.where(is_active: true, genre_id: @genres.ids).page(params[:page]).per(8).reverse_order
   end
 
   def show

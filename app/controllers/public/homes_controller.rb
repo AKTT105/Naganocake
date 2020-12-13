@@ -1,8 +1,8 @@
 class Public::HomesController < ApplicationController
 
   def top
-    @products = Product.where(is_active: true).page(params[:page]).per(4)
     @genres = Genre.where(is_active: true)
+    @products = Product.where(is_active: true, genre_id: @genres.ids).page(params[:page]).per(4)
   end
 
   def about
