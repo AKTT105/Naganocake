@@ -22,13 +22,13 @@
           <div class="col-md-8 col-md-offset-2">
             <div class="row">
               <ul class="nav navbar-nav navbar-right links">
-                <% if customer_signed_in? %>
+                <% if customer_signed_in? && request.path.exclude?("admin") %>
                   <li id="customer-name">ようこそ、<%= current_customer.last_name %>さん！</li>
                   <li><%= link_to " マイページ", my_page_customers_path, class: "glyphicon glyphicon-home" %></li>
                   <li><%= link_to " 商品一覧", products_path, class: "glyphicon glyphicon-cutlery" %></li>
                   <li><%= link_to " カート", cart_products_path, class: "glyphicon glyphicon-shopping-cart" %></li>
                   <li><%= link_to " ログアウト", destroy_customer_session_path, method: :delete, class: "glyphicon glyphicon-log-out" %></li>
-                <% elsif admin_signed_in? %>
+                <% elsif admin_signed_in? && request.path.include?("admin") %>
                   <li><%= link_to " 商品一覧", admin_products_path, class: "glyphicon glyphicon-cutlery" %></li>
                   <li><%= link_to " 会員一覧", admin_customers_path, class: "glyphicon glyphicon-user" %></li>
                   <li><%= link_to " 注文履歴一覧", admin_orders_path, class: "glyphicon glyphicon-th-large" %></li>
@@ -42,7 +42,7 @@
                 <% end %>
               </ul>
             </div>
-            <% if admin_signed_in? %>
+            <% if admin_signed_in? && request.path.include?("admin") %>
               <div class="row">
                 <div class="pull-right search-form">
                   <div class="input-group">
@@ -52,12 +52,12 @@
                       <%= button_tag( class: "search-btn") do %>
                         <%= content_tag :span, "", class: "glyphicon glyphicon-search" %>
                       <% end %>
-                    <% end %>                    
+                    <% end %>
                   </div>
                 </div>
               </div>
             <% end %>
-            
+
           </div>
         </div>
       </div>
