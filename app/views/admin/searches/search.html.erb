@@ -1,0 +1,14 @@
+<% provide(:title, @title) %>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h3><%= @title %>検索結果</h3>
+    <% if @model == 'customer' && @customers.exists? %>
+      <%= render 'admin/customers/customer_list', customers: @customers %>
+    <% elsif @model == 'product' && @products.exists? %>
+      <%= render 'admin/products/product_list', products: @products %>
+    <% else %>
+      <p>該当する検索結果はありません</p>
+    <% end %>
+  </div>
+</div>
