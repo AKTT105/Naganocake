@@ -12,7 +12,7 @@ class Public::ProductsController < ApplicationController
   end
 
   def search
-    @genres = Genre.all
+    @genres = Genre.where(is_active: true)
     @value = params['value']
     @genre = Genre.find_by(id: @value)
     @products = Product.where(genre_id: @value, is_active: true).page(params[:page]).per(8).reverse_order
