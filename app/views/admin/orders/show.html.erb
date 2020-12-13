@@ -35,13 +35,7 @@
   <div class="col-md-2">
     <h4><b>注文ステータス</b></h4>
   </div>
-  <div class="col-md-4 order-info">
-    <%= form_with model: @order, url: admin_order_path(@order), local: true do |f| %>
-      <%= f.select :status, Order.statuses.keys %>
-      <%#= f.select :status, options_for_select(Order.statuses.keys, selected: @order.status.values) %>
-      <%= f.submit "更新", class:'btn btn-info' %>
-    <% end %>
-  </div>
+  <%= render 'admin/orders/status', order: @order %>
 </div>
 
 <div class="row order-table">
@@ -56,23 +50,7 @@
               <td>制作ステータス</td>
           </tr>
       </thead>
-      <tbody>
-        <% @order_products.each do |order_product| %>
-          <tr>
-              <td><%= order_product.product.name %></td>
-              <td><%= order_product.price.to_s(:delimited) %></td>
-              <td><%= order_product.amount %></td>
-              <td><%= order_product.total_price.to_s(:delimited) %></td>
-              <td>
-                <%= form_with model: order_product, url: admin_order_product_path(order_product), local: true do |f| %>
-                  <%= f.select :making_status,OrderProduct.making_statuses.keys %>
-                  <%#= f.select :making_status, options_for_select(OrderProduct.making_statuses.keys, selected: order_product.making_status_before_type_cast) %>
-                  <%= f.submit "更新", class:'btn btn-info' %>
-                <% end %>
-              </td>
-          </tr>
-        <% end %>
-      </tbody>
+    <%= render 'admin/order_products/making_status', order_products: @order_products %>
     </table>
   </div>
   

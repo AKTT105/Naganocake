@@ -1,7 +1,11 @@
 <div class="row">
   <%= render 'public/genres/genre_search', genres: @genres %>
   <div class="col-md-9">
-    <h3><%= @genre.name %>一覧</h3>
+    <div class="row product">
+      <div class="col-md-3">
+         <h3 class="header-background"><%= @genre.name %>一覧</h3>
+      </div>
+    </div>
     <% if @products.empty? %>
       <h4>該当する商品はありません</h4>
     <% end %>
@@ -10,8 +14,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6"></div>
-  <div class="col-md-3">
-    <%= paginate @products %>         
+  <div class="col-md-3 col-md-offset-6">
+    <%= paginate @products %>
   </div>
 </div>

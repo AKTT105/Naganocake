@@ -2,7 +2,7 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    @order = Order.where(customer_id: current_customer)
+    @order = Order.where(customer_id: current_customer).reverse_order
     @orders = @order.all
   end
 
@@ -14,10 +14,10 @@ class Public::OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @customer = current_customer
   end
 
   def confirm
+    # binding.pry
     @order = Order.new(order_params)
     @order_product = OrderProduct.new
     if params[:order][:address_type] == "A"
@@ -32,8 +32,13 @@ class Public::OrdersController < ApplicationController
       @order.address = selected_address.address
       @order.name = selected_address.name
     elsif params[:order][:address_type] == "C"
-      #ストロングパラメータから取る住所
+    #ストロングパラメータから取る住所
+        #params[:order][:address] == ""
+      if params[:order][:postal_code].blank?||params[:order][:address].blank?||params[:order][:name].blank?
+        render :new
+      end
     end
+
     @cart_products = current_customer.cart_products
     @current_customer_address = current_customer.address
     @payment_type = @order.payment_type
