@@ -5,20 +5,35 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Application name
+    Naganocake
 
-* System dependencies
+## Ruby version
+    ruby 2.6.3
 
-* Configuration
+## Application infomation
+    This site is an EC site for customers who want to shop online at "Naganocake"!
+    You can purchase products by becoming a member of this site.
 
-* Database creation
+## Requirement
+    'devise'
+    "refile", require: "refile/rails", github: 'manfe/refile'
+    "refile-mini_magick"
+    'bootstrap-sass', '~> 3.3.6'
+    'jquery-rails'
+    'pry-byebug'
+    'kaminari','~> 1.2.1'
+    'cancancan'
+    'rolify'
 
-* Database initialization
+## Installation
+    bundle install
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Author
+    Toru Tumabuki
+    Kentarou Takahashi
+    Kaho Komiyama
+    Hiroto Arai
+    
+## License
+    "Physics_Sim_Py" is under [MIT license]

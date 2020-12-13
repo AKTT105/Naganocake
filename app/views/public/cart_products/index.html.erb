@@ -1,12 +1,12 @@
   <div class="row">
     <div class="col-md-12">
       <div class="pull-left margin-bottom">
-        <h4 class="header-background">ショッピングカート</h4>
+        <h3 class="header-background">ショッピングカート</h3>
       </div>
       
       <div class="pull-right margin-bottom">
         <%= link_to destroy_all_cart_products_path, method: :delete do %>
-          <span class="btn btn-danger">カートを空にする</span>
+          <span class="btn btn-danger glyphicon glyphicon-trash">カートを空にする</span>
         <% end %>
       </div>
       <table class="table table-bordered">
@@ -19,14 +19,14 @@
             <th></th>
           </tr>
         </thead>
-          <tr id="js-table-cart" class="tr">
+          <tr id="cart_product_<%= @cart_products.ids %>">
             <%= render 'public/cart_products/cart', cart_products: @cart_products %>
           </tr>
       </table>
             <div class="row">
             <div class="col-xs-3 margin-bottom">
               <%= link_to root_path do %>
-              <span class="btn btn-info glyphicon glyphicon-chevron">買い物を続ける</span>
+              <span class="btn btn-info glyphicon glyphicon-shopping-cart">買い物を続ける</span>
               <% end %>
             </div>
             <tr>
