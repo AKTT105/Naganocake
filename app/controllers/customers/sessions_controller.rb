@@ -23,8 +23,12 @@ class Customers::SessionsController < Devise::SessionsController
 
   def reject_user
     @customer = Customer.find_by(email: params[:customer][:email].downcase)
-      if (@customer.valid_password?(params[:customer][:password]) && (@customer.active_for_authentication? == false))
-        redirect_to new_customer_session_path
+      if @customer
+        if (@customer.valid_password?(params[:customer][:password]) && (@customer.active_for_authentication? == false))
+          flash[:error] = "退会済みです。"
+          redirect_to new_customer_session_path
+        end
+      else flash[:error] = "必須項目を入力してください。"
       end
   end
   # If you have extra params to permit, append them to the sanitizer.

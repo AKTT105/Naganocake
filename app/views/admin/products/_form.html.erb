@@ -1,5 +1,6 @@
 <div class="col-md-2">
   <div class="form_group">
+    <%= attachment_image_tag product, :image, fallback: "no_image.png", class: "img_prev", style: "height: 250px; width:300px;" %>
     <%= f.attachment_field :image %>
   </div>
 </div>
@@ -15,7 +16,7 @@
   <div class="row form_group">
     <%= f.label :introduction, "商品説明", class: "control-label col-md-2" %>
     <div class="col-md-5">
-      <%= f.text_field :introduction, class: "form-control introduction-form" %>
+      <%= f.text_area :introduction, class: "form-control" %>
     </div>
   </div>
 
