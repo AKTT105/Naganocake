@@ -1,0 +1,6 @@
+<div class="col-md-4 order-info">
+  <%= form_with model: order, url: admin_order_path(order), class:"update_status" do |f| %>
+    <%= f.select :status, options_for_select(Order.statuses.to_a, selected: order.status_before_type_cast) %>
+    <%= f.submit "更新", class:'btn btn-info' %>
+  <% end %>
+</div>
