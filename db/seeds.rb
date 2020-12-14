@@ -10,7 +10,7 @@ Admin.create!(
   email: 'test1@test.com',
   password: 'testtest')
 
-Customer.create!(
+Customer.create!([{
   id: '1',
   last_name: '山田',
   first_name: '太郎',
@@ -21,7 +21,21 @@ Customer.create!(
   phone_number: '00011112222',
   email: 'aa@abcde',
   password: '11111111',
-  is_deleted: 'FALSE')
+  is_deleted: 'FALSE'},
+
+                  {
+  id: '2',
+  last_name: '鈴木',
+  first_name: '一郎',
+  last_name_kana: 'スズキ',
+  first_name_kana: 'イチロウ',
+  postal_code: '1500041',
+  address: '東京都渋谷区神南1丁目19−11 パークウェースクエア2',
+  phone_number: '00011112222',
+  email: 'bb@abcde',
+  password: '11111111',
+  is_deleted: 'FALSE'
+  }])
 
 Delivery.create!(
   customer_id: '1',
@@ -50,7 +64,7 @@ Genre.create!([{
   name: 'キャンディ',
   is_active: 'TRUE'
   }])
-  
+
 Product.create!([{
   id: '1',
   genre_id: '1',
